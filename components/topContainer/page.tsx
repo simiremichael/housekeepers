@@ -1,0 +1,62 @@
+import Image from 'next/image'
+import React from 'react'
+import team from '../../app/images/Vector1.svg'
+import clients from '../../app/images/Vector2.svg'
+import completed from '../../app/images/Vector3.svg'
+
+function TopContainer() {
+  return (
+    <>
+<div className='w-full bg-bg-image-gif bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
+      <div className='pt-20'>
+       <h1 className='heading md:text-4xl'>Professional <span className='heading-span md:text-4xl'>Cleaning Service Provider</span></h1>
+      <p className='para pt-4'>Elevating spaces into sanctuaries of cleanliness</p>
+      <div className="pt-10">
+    <a className="btn bg-navbar-btn topContainer-btn">Book now</a>
+  </div>
+      </div>
+      <div className='flex w-full justify-center'>
+       <div className='top-image-container-1 md:top-image-h md:top-image-w bg-top-image-container'>
+       </div>
+       <div className='flex-auto'>
+       <div className='top-office-container-1 md:top-office-container bg-top-office-container'>
+       </div>
+       <div className='top-desk-container bg-top-desk-container'>
+       </div>
+       </div>
+      </div>
+    </div>
+    <div className='top-container-bottom bg-top-container-bottom flex items-center justify-around'>
+      <h6 className='items'>Office Cleaning</h6>
+      <h6 className='items'>Furniture Cleaning</h6>
+      <h6 className='items'>Apartment Cleaning</h6>
+      <h6 className='items'>Event Cleaning</h6>
+    </div>
+    <div className='top-container-bottom-1 bg-top-container-bottom-1 flex items-center justify-around'>
+      <div  className='flex-col justify-center items-center'>
+        <div className='icon-container justify-center items-center flex m-auto'>
+         <Image src={team} alt='icon' />
+        </div>
+        <h3 className='text-center text-heading mt-2'>30+</h3>
+        <p className='text-center text-para mt-2'>Expert Team</p>
+      </div>
+      <div  className='flex-col justify-around items-center'>
+        <div className='icon-container justify-center items-center flex m-auto'>
+        <Image src={clients} alt='icon' />
+        </div>
+        <h3 className='text-center text-heading mt-2'>50+</h3>
+        <p className='text-center text-para mt-2'>Happy Clients</p>
+      </div>
+      <div  className='flex-col justify-center items-center'>
+        <div className='icon-container justify-center items-center flex m-auto'>
+          <Image src={completed} alt='icon' />
+        </div>
+        <h3 className='text-center text-heading mt-2'>90+</h3>
+        <p className='text-center text-para mt-2'>Cleaning Completed</p>
+      </div>
+    </div>
+    </>
+  )
+}
+
+export default TopContainer
