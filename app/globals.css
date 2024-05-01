@@ -34,13 +34,15 @@ font-family: sofia Sans;
 }
 .bg-image-gif {
   width: 100%;
-    height: autos;
-    opacity: 0px;
-    background-repeat: no-repeat;
-  background-size: 100% 100%;
+  height: autos;
+  opacity: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 20px;
+  background-image: url('../public/cleaning-gif.gif');
+  background-position: center;
 }
 .heading {
 font-family: Source Sans 3;
@@ -90,6 +92,8 @@ font-family: Source Sans 3;
     background-repeat: no-repeat;
     background-size: 280px 100%;
     margin-top: 15%;
+    background-image: url('../public/street.jpg');
+    background-position: center;
 }
 .top-image-container-1 {
   width: 205px;
@@ -104,6 +108,8 @@ font-family: Source Sans 3;
   background-repeat: no-repeat;
   background-size: 280px 100%;
   margin-top: 10%;
+  background-image: url('../public/street.jpg');
+  background-position: center;
 }
 
 .top-office-container {
@@ -119,6 +125,8 @@ font-family: Source Sans 3;
     background-size: 230px 100%;
     margin-top: 10%;
     margin-left: 10%;
+    background-image: url('../public/office.jpg');
+    background-position: center;
 }
 .top-office-container-1 {
   width: 180.92px;
@@ -133,6 +141,8 @@ font-family: Source Sans 3;
   background-size: 230px 100%;
   margin-top: 5%;
   margin-left: 10%;
+  background-image: url('../public/office.jpg');
+  background-position: center;
 }
 .top-desk-container {
   width: 80px;
@@ -146,6 +156,8 @@ font-family: Source Sans 3;
       background-size: 100% 100%;
       margin-top: 10%;
       margin-left: 30%;
+      background-image: url('../public/desk.jpg');
+      background-position: center;
 }
 .top-container-bottom {
   width: 100%;
@@ -206,6 +218,8 @@ opacity: 0px;
   margin-top: 50px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background-image: url('../public/frame-big.jpg');
+  background-position: center;
 }
 .small-frame {
   border-radius: 100px;
@@ -216,6 +230,8 @@ opacity: 0px;
   left: 50%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background-image: url('../public/frame-small.jpg');
+  background-position: center;
 }
 .little-frame {
   border-top-right-radius: 50px;
@@ -294,7 +310,8 @@ margin: 15% 10% 0px;
   height: auto;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-
+  background-image: url('../public/service-bg.jpg');
+  background-position: center;
 }
 .card-text {
   font-family: Sofia Sans;
@@ -355,6 +372,8 @@ margin: 15% 10% 0px;
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: 64%;
+  background-image: url('../public/why-small.png');
+  background-position: center;
 }
 .why-right-container {
   padding: 10% 0 5% 5% ;

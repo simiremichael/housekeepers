@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
-import processIcon1 from '../../app/images/process-icon1.png'
-import processIcon2 from '../../app/images/process-icon2.png'
-import processIcon3 from '../../app/images/process-icon3.png'
-import processIcon4 from '../../app/images/process-icon4.png'
+import processIcon1 from '../../public/process-icon1.png'
+import processIcon2 from '../../public/process-icon2.png'
+import processIcon3 from '../../public/process-icon3.png'
+import processIcon4 from '../../public/process-icon4.png'
 
 function ProcessContainer() {
   return (

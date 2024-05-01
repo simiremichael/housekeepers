@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
-import team from '../../app/images/Vector1.svg'
-import clients from '../../app/images/Vector2.svg'
-import completed from '../../app/images/Vector3.svg'
+import team from '../../public/Vector1.svg'
+import clients from '../../public/Vector2.svg'
+import completed from '../../public/Vector3.svg'
 
 function TopContainer() {
   return (
     <>
-<div className='w-full bg-bg-image-gif bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
+<div className='w-full bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
       <div className='pt-20'>
        <h1 className='heading md:text-4xl'>Professional <span className='heading-span md:text-4xl'>Cleaning Service Provider</span></h1>
       <p className='para pt-4'>Elevating spaces into sanctuaries of cleanliness</p>

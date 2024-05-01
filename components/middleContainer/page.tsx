@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import rightArrow from '../../app/images/arrow-right-solid.svg'
-import { width } from '@fortawesome/free-regular-svg-icons/faAddressBook'
 
 function MiddleContainer() {
   return (

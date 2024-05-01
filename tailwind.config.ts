@@ -9,14 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-          "bg-image-gif": "url(./images/cleaning-gif.gif)",
-          "top-image-container": "url(./images/street.jpg)",
-          "top-office-container": "url(./images/office.jpg)",
-          "top-desk-container": "url(./images/desk.jpg)",
-          "big-frame": "url(./images/frame-big.jpg)",
-          "small-frame": "url(./images/frame-small.jpg)",
-          "service-container": "url(./images/service-bg.jpg)",
-          "why-small-img": "url(./images/why-small.png)"
+          // "bg-image-gif": "url(./public/cleaning-gif.gif)",
+          // "top-image-container": "url(./public/street.jpg)",
+          // "top-office-container": "url(./public/office.jpg)",
+          // "top-desk-container": "url(./public/desk.jpg)",
+          // "big-frame": "url(./public/frame-big.jpg)",
+          // "small-frame": "url(./public/frame-small.jpg)",
+          // "service-container": "url(./public/service-bg.jpg)",
+          // "why-small-img": "url(./public/why-small.png)"
           // "card1": "url(./images/img-1.png)",
           // "card2": "url(./images/img-2.png)",                                                                                                                                                                                                                                                                                                               )",
         },
