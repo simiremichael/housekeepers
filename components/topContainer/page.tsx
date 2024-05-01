@@ -12,7 +12,7 @@ function TopContainer() {
    <div className='w-full bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
       <div className='pt-20'>
        <h1 className='heading md:text-4xl'>Professional <span className='heading-span md:text-4xl'>Cleaning Service Provider</span></h1>
-      <p className='para pt-4'>Elevating spaces into sanctuaries of cleanliness</p>
+      <p className='para pt-4 max-sm:text-base'>Elevating spaces into sanctuaries of cleanliness</p>
       <div className="pt-10">
     <a className="btn bg-navbar-btn topContainer-btn">Book now</a>
   </div>
@@ -28,11 +28,11 @@ function TopContainer() {
        </div>
       </div>
     </div>
-    <div className='top-container-bottom bg-top-container-bottom flex items-center justify-around'>
-      <h6 className='items'>Office Cleaning</h6>
-      <h6 className='items'>Furniture Cleaning</h6>
-      <h6 className='items'>Apartment Cleaning</h6>
-      <h6 className='items'>Event Cleaning</h6>
+    <div className='top-container-bottom bg-top-container-bottom grid md:grid-cols-4 max-md:grid-cols-2'>
+      <h6 className='items md:text-base'>Office Cleaning</h6>
+      <h6 className='items md:text-base'>Furniture Cleaning</h6>
+      <h6 className='items md:text-base'>Apartment Cleaning</h6>
+      <h6 className='items md:text-base'>Event Cleaning</h6>
     </div>
     <div className='top-container-bottom-1 bg-top-container-bottom-1 flex items-center justify-around'>
       <div  className='flex-col justify-center items-center'>
