@@ -2,7 +2,7 @@ import React from 'react'
 
 function BottomContainer() {
   return (
-    <div>
+    <div className='botton-container'>
       
     </div>
   )

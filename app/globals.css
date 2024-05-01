@@ -35,7 +35,6 @@ font-family: sofia Sans;
 .bg-image-gif {
   width: 100%;
   height: autos;
-  opacity: 0px;
   background-repeat: no-repeat;
   background-size: cover;
   padding-left: 5%;
@@ -75,7 +74,6 @@ font-family: Source Sans 3;
     height: 16px;
     padding: 0 40px;
     border-radius: 20px;
-    opacity: 0px;
     outline-color: #0A86B6;
     color: #F2EFEF;
 }
@@ -86,7 +84,6 @@ font-family: Source Sans 3;
     left: 721.81px;
     gap: 0px;
     border-radius: 80px;
-    opacity: 0px;
     border: 12px solid #0A86B6;
     transform: rotate(350deg);
     background-repeat: no-repeat;
@@ -102,7 +99,6 @@ font-family: Source Sans 3;
   left: 721.81px;
   gap: 0px;
   border-radius: 80px;
-  opacity: 0px;
   border: 12px solid #0A86B6;
   transform: rotate(350deg);
   background-repeat: no-repeat;
@@ -118,7 +114,6 @@ font-family: Source Sans 3;
     left: 1097.02px;
     gap: 0px;
     border-radius: 90px;
-    opacity: 0px;
     border: 12px solid #0A86B6;
     transform: rotate(7.3deg);
     background-repeat: no-repeat;
@@ -134,7 +129,6 @@ font-family: Source Sans 3;
   left: 1097.02px;
   gap: 0px;
   border-radius: 90px;
-  opacity: 0px;
   border: 12px solid #0A86B6;
   transform: rotate(7.3deg);
   background-repeat: no-repeat;
@@ -167,7 +161,6 @@ font-family: Source Sans 3;
     left: 1102px;
     gap: 0px;
     border-radius: 100px;
-    opacity: 0px;
     background-repeat: no-repeat;
       background-size: 100% 100%;
       margin-top: 10%;
@@ -180,7 +173,6 @@ font-family: Source Sans 3;
     height: 137px;
     top: 655px;
     gap: 0px;
-    opacity: 0px;
 }
 .items {
   font-family: sans-serif;
@@ -195,7 +187,6 @@ height: 277px;
 top: 792px;
 padding: 32px;
 gap: 0px;
-opacity: 0px;
 }
 
 .icon-container {
@@ -204,7 +195,6 @@ opacity: 0px;
     padding: 10px;
     gap: 10px;
     border-radius: 64px;
-    opacity: 0px;
     border: 1px dotted #10536D;
     background-color: #ffffff;
 }
@@ -225,11 +215,9 @@ opacity: 0px;
   width: 100%;
   top: 1123px;
   gap: 0px;
-  opacity: 0px;
 }
 .big-frame {
   border-radius: 100px;
-  opacity: 0px;
   border: 12px solid #0A86B6;
   margin-top: 50px;
   background-repeat: no-repeat;
@@ -254,7 +242,6 @@ opacity: 0px;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
-  opacity: 0px;
   border-top: 12px solid #0A86B6;
   border-right: 12px solid #0A86B6;
   border-left: 12px solid #0A86B6;
@@ -381,9 +368,7 @@ margin: 15% 10% 0px;
 .why-small-img {
   left: 19px;
   gap: 0px;
-  opacity: 0px;
   border-radius: 100px;
-  opacity: 0px;
   border: 12px solid #0A86B6;
   background-repeat: no-repeat;
   background-size: cover;
@@ -441,14 +426,13 @@ margin: 15% 10% 0px;
       padding: 12px;
       gap: 10px;
       border-radius: 64px;
-      opacity: 0px;
       background: #0A86B6;
       display: flex;
       justify-content: center;
       align-items: center;
   }
-  .diagram-container {}
-  .process-icon {}
+  /* .diagram-container {}
+  .process-icon {} */
   .process-divider {
     height: 70px;
     width: 0px;
@@ -459,8 +443,7 @@ margin: 15% 10% 0px;
     width: 20px;
       height: 20px;
       border-radius: 100px;
-      border: 1px ;
-      opacity: 0px;
+      border: 1px;
       background-color: #d9d9d9;
       display: flex;
       align-items: center;
@@ -469,9 +452,9 @@ margin: 15% 10% 0px;
       position: absolute;
       margin-top: 50px;
   }
-  .process-heading-container {
-    /* padding: 0px 20%; */
-  }
+  /* .process-heading-container {
+  
+  } */
   .process-h {
     font-family: Sofia Sans;
       font-size: 16px;
@@ -501,4 +484,9 @@ margin: 15% 10% 0px;
       z-index: 100;
       margin-left: 80px;
       margin-top: -38px;
+  }
+  .bottom-container {
+    width: 100%;
+      height: 455px;
+      gap: 0px;
   }
