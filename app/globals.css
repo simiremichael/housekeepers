@@ -96,8 +96,8 @@ font-family: Source Sans 3;
     background-position: center;
 }
 .top-image-container-1 {
-  width: 205px;
-  height: 310px;
+  width: 210px;
+  height: 300px;
   top: 69.08px;
   left: 721.81px;
   gap: 0px;
@@ -113,8 +113,8 @@ font-family: Source Sans 3;
 }
 
 .top-office-container {
-  width: 210.92px;
-    height: 300.28px;
+  width: 180.92px;
+    height: 260.28px;
     left: 1097.02px;
     gap: 0px;
     border-radius: 90px;
@@ -128,9 +128,9 @@ font-family: Source Sans 3;
     background-image: url('../public/office.jpg');
     background-position: center;
 }
-.top-office-container-1 {
-  width: 180.92px;
-  height: 260.28px;
+.top-office-container {
+  width: 140.92px;
+  height: 240.28px;
   left: 1097.02px;
   gap: 0px;
   border-radius: 90px;
@@ -144,6 +144,22 @@ font-family: Source Sans 3;
   background-image: url('../public/office.jpg');
   background-position: center;
 }
+/* .top-office-container {
+  width: 190.92px;
+  height: 290.28px;
+  left: 1097.02px;
+  gap: 0px;
+  border-radius: 90px;
+  opacity: 0px;
+  border: 12px solid #0A86B6;
+  transform: rotate(7.3deg);
+  background-repeat: no-repeat;
+  background-size: 230px 100%;
+  margin-top: 5%;
+  margin-left: 10%;
+  background-image: url('../public/office.jpg');
+  background-position: center;
+} */
 .top-desk-container {
   width: 80px;
     height: 80px;

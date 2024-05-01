@@ -27,11 +27,13 @@ const config: Config = {
       },
       height: {
         "top-container-h": "480px",
-        "top-image-h": "380px"
+        "top-image-h": "380px",
+        "top-office-h": "280px",
 
       },
       width: {
-        "top-image-w": "248px"
+        "top-image-w": "248px",
+        "top-office-w": "180px"
       },
       margin: {
         "little-frame": "330px",

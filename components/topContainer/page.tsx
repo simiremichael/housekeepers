@@ -15,11 +15,11 @@ function TopContainer() {
     <a className="btn bg-navbar-btn topContainer-btn">Book now</a>
   </div>
       </div>
-      <div className='flex w-full justify-center'>
-       <div className='top-image-container-1 md:top-image-h md:top-image-w bg-top-image-container'>
+      <div className='flex w-full justify-center lg:ml-10'>
+       <div className='top-image-container-1 md:h-top-image-h md:w-top-image-w'>
        </div>
-       <div className='flex-auto'>
-       <div className='top-office-container-1 md:top-office-container bg-top-office-container'>
+       <div className='flex-auto lg:ml-10'>
+       <div className='top-office-container md:h-top-office-h md:w-top-office-w'>
        </div>
        <div className='top-desk-container bg-top-desk-container'>
        </div>
