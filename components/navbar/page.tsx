@@ -26,7 +26,7 @@ function Navbar() {
       <li><a>Contact Us</a></li>
     </ul>
   </div>
-  <div className="navbar-end max-sm:hiddenupdated">
+  <div className="navbar-end max-sm:hidden">
     <a className="btn bg-navbar-btn navbar-btn">Book us now</a>
   </div>
 </div>
