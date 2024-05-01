@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import processIcon1 from '../../public/process-icon1.png'
@@ -10,7 +11,7 @@ function ProcessContainer() {
     <div className='process-container'>
      <div className='inner-process-container'>
         <div className='process-heading-container sm:pl-process-heading-container md:pl-process-heading-container-ls'>
-        <h3 className='process-h md:text-xl'>The Process</h3>
+        <h4 className='process-h md:text-xl'>The Process</h4>
         <p className='process-p md:text-2xl'>Here's How it Works</p>
         </div>
     <div className='proces-diagram-container sm:flex-row'>

@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import team from '../../public/Vector1.svg'
@@ -5,6 +6,7 @@ import clients from '../../public/Vector2.svg'
 import completed from '../../public/Vector3.svg'
 
 function TopContainer() {
+  
   return (
     <div>
    <div className='w-full bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
