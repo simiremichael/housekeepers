@@ -11,7 +11,7 @@ function TopContainer() {
     <div>
    <div className='w-full bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
       <div className='pt-20'>
-       <h1 className='heading md:text-4xl'>Professional <span className='heading-span md:text-4xl'>Cleaning Service Provider</span></h1>
+       <h1 className='heading lg:text-4xl md:text-3xl max-md:mb-0 max-md:mt-0'>Professional <span className='heading-span max-md:mb-0 max-md:mt-0 lg:text-4xl md:text-3xl'>Cleaning Service Provider</span></h1>
       <p className='para pt-4 max-sm:text-base'>Elevating spaces into sanctuaries of cleanliness</p>
       <div className="pt-10">
     <a className="btn bg-navbar-btn topContainer-btn">Book now</a>
@@ -36,25 +36,25 @@ function TopContainer() {
     </div>
     <div className='top-container-bottom-1 bg-top-container-bottom-1 flex items-center justify-around'>
       <div  className='flex-col justify-center items-center'>
-        <div className='icon-container justify-center items-center flex m-auto'>
+        <div className='icon-container md:w-24 md:h-24 justify-center items-center flex m-auto'>
          <Image src={team} alt='icon' />
         </div>
-        <h3 className='text-center text-heading mt-2'>30+</h3>
-        <p className='text-center text-para mt-2'>Expert Team</p>
+        <h3 className='text-center md:text-2xl text-heading mt-2'>30+</h3>
+        <p className='text-center md:text-lg text-para mt-2'>Expert Team</p>
       </div>
       <div  className='flex-col justify-around items-center'>
-        <div className='icon-container justify-center items-center flex m-auto'>
+        <div className='icon-container md:w-24 md:h-24 justify-center items-center flex m-auto'>
         <Image src={clients} alt='icon' />
         </div>
-        <h3 className='text-center text-heading mt-2'>50+</h3>
-        <p className='text-center text-para mt-2'>Happy Clients</p>
+        <h3 className='text-center md:text-2xl  text-heading mt-2'>50+</h3>
+        <p className='text-center md:text-lg text-para mt-2'>Happy Clients</p>
       </div>
       <div  className='flex-col justify-center items-center'>
-        <div className='icon-container justify-center items-center flex m-auto'>
+        <div className='icon-container md:w-24 md:h-24 justify-center items-center flex m-auto'>
           <Image src={completed} alt='icon' />
         </div>
-        <h3 className='text-center text-heading mt-2'>90+</h3>
-        <p className='text-center text-para mt-2'>Cleaning Completed</p>
+        <h3 className='text-center md:text-2xl  text-heading mt-2'>90+</h3>
+        <p className='text-center md:text-lg text-para mt-2'>Cleaning Completed</p>
       </div>
     </div>
     </div>

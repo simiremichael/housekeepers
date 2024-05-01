@@ -17,7 +17,7 @@ function MiddleContainer() {
        <div className='inner-container'>
         <h2 className='innter-about'>About Us</h2>
         <h3 className='inner-heading'>We Make Places Clean and Sparkle</h3>
-        <p className='inner-para'>From home to offices, our experienced team employs
+        <p className='inner-para md:text-base'>From home to offices, our experienced team employs
 cutting edge techniques and top-quality products.
 Transforming spaces into sanctuaries of cleanliness,
 our meticulous cleaning services go beyond the
@@ -25,7 +25,7 @@ surface. With a keen eye for detail and eco-friendly
 practices.</p>
 <div className='flex mt-10'>
 <p className='inner-more'>Learn more </p>
-<svg fill='#10536D' style={{width: '14px', marginLeft: 10, marginTop: 3}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+<svg fill='#10536D' style={{width: '12px', marginLeft: 10, marginTop: 2}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
 </div>
        </div>
       </div>

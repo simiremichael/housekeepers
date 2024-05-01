@@ -16,10 +16,10 @@ function ServiceContainer() {
         <div className='grid grid-cols-1 sm:grid-cols-2 mb-20'>
         <div>
         <h4 className='service-l-h text-base md:text-xl'>Service</h4>
-        <p className='service-l-p text-2xl md:text-3xl'>Revamp Your Space With Our Assistance</p>
+        <p className='service-l-p sm:text-xl md:text-2xl lg:text-3xl'>Revamp Your Space With Our Assistance</p>
         </div>
         <div>
-         <p className='service-r-p text-base md:text-xl'>Our cleaning services bring a higher level of cleanliness to your space. We prioritize attention to detail and eco-friendly practices.</p>
+         <p className='service-r-p text-base md:text-xl max-sm:mt-4'>Our cleaning services bring a higher level of cleanliness to your space. We prioritize attention to detail and eco-friendly practices.</p>
            <div className="navbar-end mt-10">
            <a className="btn bg-navbar-btn navbar-btn">Book us now</a>
           </div>

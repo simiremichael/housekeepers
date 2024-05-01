@@ -45,7 +45,7 @@ font-family: sofia Sans;
 }
 .heading {
 font-family: Source Sans 3;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 56.96px;
   letter-spacing: 0.04em;
@@ -54,12 +54,13 @@ font-family: Source Sans 3;
 }
 .heading-span {
   font-family: Sonsie One;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 51.76px;
     letter-spacing: 0.04em;
     text-align: left;
     color: white;
+    margin-bottom: 0px;
 }
 .para {
   font-family: Sofia Sans;
@@ -180,11 +181,11 @@ font-family: Source Sans 3;
 }
 .items {
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 24px;
   color: #ffffff;
-  margin-left: 10%;
+  margin-left: 11%;
 }
 .top-container-bottom-1 {
 width: 100%;
@@ -194,13 +195,13 @@ padding: 32px;
 gap: 0px;
 padding-left: 5%;
   padding-right: 5%;
-  padding-top: 7%;
+  /* padding-top: 7%; */
 }
 
 .icon-container {
-  width: 100px;
-    height: 100px;
-    padding: 10px;
+  width: 60px;
+    height: 60px;
+    padding: 15px;
     gap: 10px;
     border-radius: 64px;
     border: 1px dotted #10536D;
@@ -208,13 +209,13 @@ padding-left: 5%;
 }
 .text-para {
   font-family: Sofia Sans;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 24px;
 }
 .text-heading {
   font-family: Sora;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 35.28px;
   color: #0A86B6;
@@ -292,7 +293,7 @@ margin: 15% 10% 0px;
 }
 .inner-heading {
   font-family: Sofia Sans;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 33.6px;
   letter-spacing: 0.02em;
@@ -301,16 +302,16 @@ margin: 15% 10% 0px;
 }
 .inner-para {
   font-family: Sofia Sans;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.015em;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 .inner-more {
   font-family: Sofia Sans;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
