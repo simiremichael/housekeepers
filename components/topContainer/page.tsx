@@ -6,8 +6,8 @@ import completed from '../../public/Vector3.svg'
 
 function TopContainer() {
   return (
-    <>
-<div className='w-full bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
+    <div>
+   <div className='w-full bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
       <div className='pt-20'>
        <h1 className='heading md:text-4xl'>Professional <span className='heading-span md:text-4xl'>Cleaning Service Provider</span></h1>
       <p className='para pt-4'>Elevating spaces into sanctuaries of cleanliness</p>
@@ -55,7 +55,7 @@ function TopContainer() {
         <p className='text-center text-para mt-2'>Cleaning Completed</p>
       </div>
     </div>
-    </>
+    </div>
   )
 }
 
