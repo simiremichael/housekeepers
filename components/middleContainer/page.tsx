@@ -14,10 +14,10 @@ function MiddleContainer() {
       </div>
       </div>
       <div className='left-container'>
-       <div className='inner-container'>
+       <div className='inner-container md:ml-16 lg:ml-4'>
         <h2 className='innter-about'>About Us</h2>
         <h3 className='inner-heading'>We Make Places Clean and Sparkle</h3>
-        <p className='inner-para md:text-base'>From home to offices, our experienced team employs
+        <p className='inner-para md:text-base lg:text-lg'>From home to offices, our experienced team employs
 cutting edge techniques and top-quality products.
 Transforming spaces into sanctuaries of cleanliness,
 our meticulous cleaning services go beyond the
