@@ -26,49 +26,49 @@ function ServiceContainer() {
         </div>
         </div>
         <div className='card-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
-           <div className="card card-compact w-full h-60 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
+           <div className="card card-compact w-full h-56 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
   <Image src={img1} className='h-full w-full rounded-t-md' alt="office cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Office Cleaning</p>
     </div>
   </div>
-   <div className="card card-compact w-full h-60 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
+   <div className="card card-compact w-full h-56 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
   <Image src={img2} className='h-full w-full rounded-t-md' alt="office cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Kitchen Cleaning</p>
     </div>
   </div>
-   <div className="card card-compact w-full h-60 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
+   <div className="card card-compact w-full h-56 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
   <Image src={img3} className='h-full w-full rounded-t-md' alt="office cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Furniture Cleaning</p>
     </div>
   </div>
-   <div className="card card-compact w-full h-60 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
+   <div className="card card-compact w-full h-56 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
   <Image src={img4} className='h-full w-full rounded-t-md' alt="office cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Apartment Cleaning</p>
     </div>
   </div>
-   <div className="card card-compact w-full h-60 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
+   <div className="card card-compact w-full h-56 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
   <Image src={img5} className='h-full w-full rounded-t-md' alt="office cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Rug Cleaning</p>
     </div>
   </div>
-   <div className="card card-compact w-full h-60 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
+   <div className="card card-compact w-full h-56 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
   <Image src={img6} className='h-full w-full rounded-t-md' alt="office cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Event Cleaning</p>
     </div>
   </div>
-   <div className="card card-compact w-full h-60 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
+   <div className="card card-compact w-full h-46 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
   <Image src={img7} className='h-full w-full rounded-t-md' alt="office cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Fumigation</p>
     </div>
   </div>
-   <div className="card card-compact w-full h-60 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
+   <div className="card card-compact w-full h-56 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
   <Image src={img8} className='h-full w-full rounded-t-md' alt="office cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Post Construction Cleaning</p>
