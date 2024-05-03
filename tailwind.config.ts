@@ -38,7 +38,9 @@ const config: Config = {
       margin: {
         "little-frame": "330px",
         "why-small-img": "30%",
-        "why-right-container": "15%"
+        "why-right-container": "15%",
+        "testimonies-h": "46%",
+        "testimonies-p": "46%",
       },
       padding: {
        "process-heading-container": "36%",

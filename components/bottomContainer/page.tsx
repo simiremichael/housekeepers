@@ -4,8 +4,8 @@ function BottomContainer() {
   return (
     <div className='bottom-container '>
       <div className='w-full'>
-        <h3 className='testimonies-h'>Testimonies</h3>
-        <p className='testimonies-p'>What Our ClientS Say</p>
+        <h3 className='testimonies-h sm:ml-testimonies-h'>Testimonies</h3>
+        <p className='testimonies-p sm:ml-testimonies-p'>What Our ClientS Say</p>
       <div className='testimonies-card-container scroll-smooth xl:overflow-x-hidden lg:w-full lg:gap-2'>
        <div className='testimonies-card-inner max-sm:flex max-sm:justify-center max-sm:w-full xl:w-1/4 '>
     <div className='testimonies-card'>
