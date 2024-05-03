@@ -21,7 +21,7 @@ function Navbar() {
         <li><Link className={`link ${pathname === '/contact' ? 'active' : ''}`} href='/contact'>Contact Us</Link></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">
+    <a className="btn btn-ghost text-xl" href='/'>
         <Image style={{height: 'auto'}} priority src={logo} width={180} alt='logo'/>
         </a>
   </div>
