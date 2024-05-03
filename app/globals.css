@@ -15,6 +15,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+body {
+  overflow-x: hidden;
+}
 .navbar {
   padding-left: 5%;
   padding-right: 5%;
@@ -497,6 +500,167 @@ margin: 15% 5% 0px;
   }
   .bottom-container {
     width: 100%;
-      height: 455px;
+      height: auto;
       gap: 0px;
+      background: #0A86B61F;
+      padding: 3%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
   }
+  .testimonies-h {
+    font-family: Sofia Sans;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      color: #10536D;
+      margin-left: 43%;
+      margin-bottom: 10px;
+  }
+  .testimonies-p {
+    font-family: Sofia Sans;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 33.6px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      margin-left: 43%;
+      margin-bottom: 20px;
+  }
+  .testimonies-card-container {
+    width: auto;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  .testimonies-card {
+    width: 280px;
+      height: 200px;
+      top: 205px;
+      left: 152px;
+      border-radius: 20px;
+      background: #FFFFFF;
+      margin-right: 20px;
+  }
+  .testimonies-card-img-container {
+    width: 100px;
+      height: 96px;
+      border-radius: 0px 100px 100px 0px;
+      background: #0A86B6;
+      margin-top: 20%;
+  }
+  .testimonies-card-img1 {
+    width: 60px;
+      height: 60px;
+      top: 61px;
+      left: 38px;
+      border-radius: 100px;
+      gap: 0px;
+      border: 2px;
+      background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../public/testimonies-img1.jpg');
+        background-position: center;
+  }
+    .testimonies-card-img2 {
+      width: 60px;
+      height: 60px;
+      top: 61px;
+      left: 38px;
+      border-radius: 100px;
+      gap: 0px;
+      border: 2px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('../public/testimonies-img2.jpg');
+      background-position: center;
+    }
+         .testimonies-card-img3 {
+           width: 60px;
+           height: 60px;
+           top: 61px;
+           left: 38px;
+           border-radius: 100px;
+           gap: 0px;
+           border: 2px;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-image: url('../public/testimonies-img3.jpg');
+           background-position: center;
+         }
+                    .testimonies-card-img4 {
+                      width: 60px;
+                      height: 60px;
+                      top: 61px;
+                      left: 38px;
+                      border-radius: 100px;
+                      gap: 0px;
+                      border: 2px;
+                      background-repeat: no-repeat;
+                      background-size: cover;
+                      background-image: url('../public/testimonies-img4.jpg');
+                      background-position: center;
+                    }
+  .testimonies-card-name {
+    font-family: Exo 2;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 44px;
+      letter-spacing: -0.02em;
+      text-align: left;
+      margin-top: 20%;
+      margin-left: 20px;
+  }
+  .testimonies-card-title {
+    font-family: Exo 2;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 19.2px;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color: #746F6F;
+      margin-left: 20px;
+  }
+  .testimonies-quote-container {
+  width: 40px;
+  height: 40px;
+  background: #D9D9D954;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0px 0px 20px;
+  }
+  .testimonies-card-bottom-text {
+    font-family: Exo 2;
+      font-size: 12px;
+      font-weight: 500;
+      text-align: left;
+      color: #746F6F;
+      margin: 20px 8% 0 12%;
+  }
+
+.footer-container {
+  width: 100%;
+  height: 200px;
+    height: Fixed (936px)px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.footer-menu-items {
+  font-family: Sofia Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #344054;
+}
+.footer-reserve-text {
+  font-family: Sofia Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #344054;
+}

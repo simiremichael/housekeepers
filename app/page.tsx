@@ -1,4 +1,5 @@
 import BottomContainer from "@/components/bottomContainer/page";
+import Footer from "@/components/footer/page";
 import MiddleContainer from "@/components/middleContainer/page";
 import Navbar from "@/components/navbar/page";
 import ProcessContainer from "@/components/processContainer/page";
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyContainer />
       <ProcessContainer />
       <BottomContainer />
+      <Footer />
     </main>
   );
 }
