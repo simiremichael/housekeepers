@@ -14,7 +14,7 @@ function Footer() {
        <div className="flex sm:m-7 md:m-10">
         <a className='footer-menu-items mr-5 md:text-base'><p>About</p></a>
         <a className='footer-menu-items mr-5 md:text-base'><p>Contact Us</p></a>
-        <a className='footer-menu-items mr-5 md:text-base'><p>Privacy Policy</p></a>
+        <a className='footer-menu-items mr-5 sm:mr-0 md:text-base'><p>Privacy Policy</p></a>
       </div>
         </div>
         <div className='footer-social-contaner flex max-md:mt-6'>

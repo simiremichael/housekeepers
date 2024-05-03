@@ -534,6 +534,13 @@ margin: 15% 5% 0px;
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
+    ::-webkit-scrollbar {
+        display: none;
+      }
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
   }
   .testimonies-card {
     width: 280px;
