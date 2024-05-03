@@ -7,14 +7,14 @@ function Footer() {
     <div className='footer-container max-md:grid max-md:grid-cols-1'>
         <div className='footer-inner-container mt-8'>
         <div className='footer-inner-top-container sm:flex sm:justify-between items-baseline'>
-        <div className='footer-inner-left-container flex align-baseline items-baseline max-sm:justify-between'>
+        <div className='footer-inner-left-container flex align-baseline items-baseline max-sm:justify-between max-sm:flex-col'>
          <a className="items-center flex cursor-pointer">
         <Image style={{height: 'auto'}} priority src={logo} width={140} alt='logo'/>
         </a>
-       <div className="flex sm:m-7 md:m-10">
-        <a className='footer-menu-items mr-5 md:text-base'><p>About</p></a>
-        <a className='footer-menu-items mr-5 md:text-base'><p>Contact Us</p></a>
-        <a className='footer-menu-items mr-5 sm:mr-0 md:text-base'><p>Privacy Policy</p></a>
+       <div className="flex sm:m-7 md:m-10 max-sm:mt-5">
+        <a className='footer-menu-items mr-5 cursor-pointer md:text-base'><p>About</p></a>
+        <a className='footer-menu-items mr-5 cursor-pointer md:text-base'><p>Contact Us</p></a>
+        <a className='footer-menu-items mr-5 cursor-pointer sm:mr-0 md:text-base'><p>Privacy Policy</p></a>
       </div>
         </div>
         <div className='footer-social-contaner flex max-md:mt-6'>
