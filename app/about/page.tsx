@@ -108,7 +108,7 @@ office is cleaned to your satisfaction
 </div> */}
        </div>
       </div>
-      <div className='about-bottom-inner-container flex justify-center align-center'>
+      <div className='about-bottom-inner-container flex justify-center align-center pt-4 '>
       <div className='about-big-frame h-72 w-56 md:h-90 md:w-60 lg:h-96 lg:w-72'></div>
       <div className='about-small-frame h-32 w-48 md:w-56 md:h-40 mt-10 md:mt-8 md:left-3/4'></div>
       {/* <div className='little-frame bg-white h-24 mt-60 md:mt-little-frame w-36 flex-1 '>
