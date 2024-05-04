@@ -163,7 +163,6 @@ font-family: Source Sans 3;
     gap: 0px;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 7%;
 
 }
 .items {
@@ -816,7 +815,9 @@ padding: 5%;
 .about-bottom-container {
 
 }
-.about-bottom-inner-container {}
+.about-bottom-inner-container {
+
+}
 .about-big-frame {
   border-radius: 100px;
   border: 12px solid #0A86B6;
