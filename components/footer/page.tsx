@@ -18,9 +18,9 @@ function Footer() {
         <Image style={{height: 'auto'}} priority src={logo} width={140} alt='logo'/>
         </a>
        <div className="flex sm:m-7 md:m-10 max-sm:mt-5">
-        <Link className={`link ${pathname === '/about' ? 'active' : ''} ${pathname === '/about' ? 'font-bold' : 'font-normal'} footer-menu-items mr-5 cursor-pointer md:text-base`} href='/about'><p>About</p></Link>
-        <Link className={`link ${pathname === '/contact' ? 'active' : ''} footer-menu-items mr-5 cursor-pointer md:text-base`} href='/contact' id='footer-link'><p>Contact Us</p></Link>
-        <Link className={`link ${pathname === '/privacy' ? 'active' : ''} footer-menu-items mr-5 cursor-pointer md:text-base`} href='/privacy' id='footer-link'><p>Privacy Policy</p></Link>
+        <Link style={{fontWeight: pathname === '/about' ? 'bold' : '' }}  className={`link ${pathname === '/about' ? 'active' : ''} footer-menu-items mr-5 cursor-pointer md:text-base`} href='/about'><p>About</p></Link>
+        <Link style={{fontWeight: pathname === '/contact' ? 'bold' : '' }} className={`link ${pathname === '/contact' ? 'active' : ''} footer-menu-items mr-5 cursor-pointer md:text-base`} href='/contact' id='footer-link'><p>Contact Us</p></Link>
+        <Link style={{fontWeight: pathname === '/privacy' ? 'bold' : '' }} className={`link ${pathname === '/privacy' ? 'active' : ''} footer-menu-items mr-5 cursor-pointer md:text-base`} href='/privacy' id='footer-link'><p>Privacy Policy</p></Link>
       </div>
         </div>
         <div className='footer-social-contaner flex max-md:justify-end max-sm:mt-5'>

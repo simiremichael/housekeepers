@@ -1,4 +1,3 @@
-"use client"
 import Image from 'next/image'
 import React from 'react'
 import team from '../../public/Vector1.svg'
@@ -10,7 +9,7 @@ function TopContainer() {
   return (
     <div>
    <div className='w-full bg-image-gif md:h-top-container-h grid grid-cols-1 gap-4 md:grid-cols-2'>
-      <div className='pt-20'>
+      <div className='pt-20 max-md:pt-10'>
        <h1 className='heading lg:text-4xl md:text-3xl max-md:mb-0 max-md:mt-0'>Professional <span className='heading-span max-md:mb-0 max-md:mt-0 lg:text-4xl md:text-3xl'>Cleaning Service Provider</span></h1>
       <p className='para pt-4 max-sm:text-base'>Elevating spaces into sanctuaries of cleanliness</p>
       <div className="pt-10">
@@ -50,7 +49,7 @@ function TopContainer() {
         <h3 className='text-center md:text-2xl text-heading mt-2'>30+</h3>
         <p className='text-center md:text-lg text-para mt-2'>Expert Team</p>
       </div>
-      <div  className='flex-col justify-around items-center'>
+      <div  className='flex-col justify-around items-center' style={{marginRight: '-5%'}}>
         <div className='icon-container md:w-24 md:h-24 justify-center items-center flex m-auto'>
         <Image src={clients} alt='icon' />
         </div>

@@ -71,7 +71,7 @@ function BottomContainer() {
  </div>
     </div>
     <div className='testimonies-card-bottom'>
-   <p className='testimonies-card-bottom-text'>They are profesionals and their job is very satisfactory</p>
+   <p className='testimonies-card-bottom-text'>Excellent work and good customer service</p>
    </div>
        </div>
        </div>
@@ -105,7 +105,7 @@ function BottomContainer() {
    </div>
     </div>
     <div className='testimonies-card-bottom'>
-   <p className='testimonies-card-bottom-text'>They are profesionals and their job is very satisfactory</p>
+   <p className='testimonies-card-bottom-text'>Their profesionalsm is out of this word</p>
    </div>
        </div>
        </div>
@@ -139,7 +139,7 @@ function BottomContainer() {
  </div>
    </div>
    <div className='testimonies-card-bottom'>
-   <p className='testimonies-card-bottom-text'>They are profesionals and their job is very satisfactory</p>
+   <p className='testimonies-card-bottom-text'>I have never had issues with them over 2 years of cleaning our offices</p>
    </div>
     </div>
  </div>
