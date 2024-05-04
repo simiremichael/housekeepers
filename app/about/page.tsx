@@ -65,7 +65,7 @@ function page() {
         </div>
        </div>
        <div className='about-middle-inner-r'>
-        <div className='about-middle-inner-r-text-container'>
+        <div className='about-middle-inner-r-text-container md:mt-5 lg:mt-14'>
           <h3
           className='about-middle-r-h'>We Are The Fastest Growing Cleaning Companies</h3>
          <p className='about-middle-r-text'>Our cleaning services is growing quickly. We
@@ -83,9 +83,9 @@ customers.</p>
       <div className='middle-container'>
       <div className='big-frame-container grid grid-cols-1 md:grid-cols-2 pb-10'>
       <div className='left-container'>
-       <div className='inner-container md:ml-16 lg:ml-4 max-md:mt-2'>
+       <div className='inner-container md:ml-16  max-md:mt-2'>
         {/* <h2 className='innter-about'>About Us</h2> */}
-        <h3 className='inner-heading'>We Make Cleaning Easier and More Convenient </h3>
+        <h3 className='inner-heading md:-mt-10'>We Make Cleaning Easier and More Convenient </h3>
         <p className='inner-para md:text-base lg:text-lg'>We offer convenient, professional cleaning services
 to help make your life easier. Our experienced, trained
 cleaners use top quality products and equipment's to

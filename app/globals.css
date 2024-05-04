@@ -486,7 +486,7 @@ margin: 15% 5% 0px;
       height: auto;
       gap: 0px;
       background: #0A86B61F;
-      padding: 3%;
+      padding: 5% 3% 6% 3%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -647,10 +647,6 @@ margin: 15% 5% 0px;
     line-height: 24px;
     text-decoration: none;
     color: #344054;
-    :active {
-        font-size: 13px;
-        font-weight: bold;
-    }
 }
 
 .footer-reserve-text {
@@ -839,4 +835,52 @@ padding: 5%;
   background-size: cover;
   background-image: url('../public/about-frame-small.png');
   background-position: center;
+}
+.contact-container {
+  padding: 5%;
+}
+.contact-heading {
+  font-family: Sofia Sans;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33.6px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+.contact-label {
+  font-family: Sofia Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.6px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    margin: 15px 0px 3px 0px;
+}
+.contact-left-details-container {
+  width: 100%;
+    height: 380px;
+    border-radius: 60px;
+    background: linear-gradient(180deg, #0A86B6 77.08%, #0DBBFF 100%);
+    padding: 20% 5% 0px 5%;
+    margin-top: 10px;
+  }
+.contact-left-heading {
+  font-family: Sofia Sans;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33.6px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.contact-left-para {
+  font-family: Sofia Sans;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 33.6px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #FFFFFF;
+    margin-top: 10px;
 }
