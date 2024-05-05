@@ -63,7 +63,8 @@ if(price.serviceType === 'Post Construction Cleaning') {
   return (
     <div className='booking-container'>
         <div className='booking-inner-container'>
-      <h1 className=''>Boking Us</h1>
+    <a href='/' className='btn'>back</a>
+      <h1 className='text-center font-bold'>Boking </h1>
       <form action={formAction}>
       <div className='date-time-container grid md:grid-cols-3 gap-4 mt-5 mb-5'>
      <div className=''>
