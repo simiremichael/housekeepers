@@ -885,3 +885,12 @@ padding: 5%;
     color: #FFFFFF;
     margin-top: 10px;
 }
+.booking-inner-container {
+  margin: 5%;
+}
+.group-input {
+  font-family: Sofia Sans;
+}
+input {
+  font-family: Sofia Sans;
+}

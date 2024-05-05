@@ -6,6 +6,7 @@ import icon1 from '../../public/about-icon1.png'
 import icon2 from '../../public/about-icon2.png'
 import icon3 from '../../public/about-icon3.png'
 import icon4 from '../../public/about-icon4.png'
+import Link from 'next/link'
 
 function page() {
   return (
@@ -17,7 +18,7 @@ function page() {
        <h1 className='about-heading lg:text-4xl md:text-3xl max-md:mb-0 max-md:mt-0'>Trusted and <span className='about-heading-span max-md:mb-0 max-md:mt-0 lg:text-4xl md:text-3xl'>Reliable Cleaning Services</span></h1>
       <p className='about-para pt-4 max-sm:text-base'>We are premier cleaning services in your local area. We offer reliable and high-quality cleaning services across the city.</p>
       <div className="pt-10">
-    <a className="btn bg-navbar-btn topContainer-btn">Book now</a>
+    <Link href='/booking' className="btn bg-navbar-btn topContainer-btn">Book now</Link>
   </div>
       </div>
       <div className='flex w-full justify-center lg:ml-8'>

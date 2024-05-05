@@ -8,6 +8,7 @@ import img6 from '../../public/img-6.png'
 import img7 from '../../public/img-7.png'
 import img8 from '../../public/img-8.png'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function ServiceContainer() {
   return (
@@ -21,7 +22,7 @@ function ServiceContainer() {
         <div>
          <p className='service-r-p text-base md:text-xl max-sm:mt-4'>Our cleaning services bring a higher level of cleanliness to your space. We prioritize attention to detail and eco-friendly practices.</p>
            <div className="navbar-end mt-10">
-           <a className="btn bg-navbar-btn navbar-btn">Book us now</a>
+           <Link href='/booking' className="btn bg-navbar-btn navbar-btn">Book us now</Link>
           </div>
         </div>
         </div>

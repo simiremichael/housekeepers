@@ -21,9 +21,9 @@ function Navbar() {
         <li><Link style={{textDecoration: 'none'}} className={`link ${pathname === '/contact' ? 'active' : ''}`} href='/contact'>Contact Us</Link></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl" href='/'>
+    <Link className="btn btn-ghost text-xl" href='/'>
         <Image style={{height: 'auto'}} priority src={logo} width={180} alt='logo'/>
-        </a>
+        </Link>
   </div>
   <div className="navbar-start hidden lg:flex">
     <ul className="menu menu-horizontal px-1 font-sora">
@@ -32,7 +32,7 @@ function Navbar() {
     </ul>
   </div>
   <div className="navbar-end max-sm:hidden">
-    <a className="btn bg-navbar-btn navbar-btn">Book us now</a>
+    <Link href='/booking' className="btn bg-navbar-btn navbar-btn">Book us now</Link>
   </div>
 </div>
   )

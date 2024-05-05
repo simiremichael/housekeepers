@@ -1,0 +1,159 @@
+ 'use client'
+import React, { useEffect, useState } from 'react'
+import { postBooking } from '@/action';
+import { useFormState } from 'react-dom';
+import { useRouter } from 'next/navigation'
+import { stringify } from 'querystring';
+
+
+function page() {
+  
+     const router = useRouter()
+
+    // const [state, formAction] = useFormState(postBooking, undefined)
+// const dates = new Date();
+//     const futureDate = dates.getDate() + 1;
+//     dates.setDate(futureDate);
+//     const defaultValue = dates.toLocaleDateString('en-CA');
+//     console.log(date, defaultValue)
+const [price, setPrice ] = useState({livingRoom: '', bedroom: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '',})
+ let livingroomPrice = 5000
+ let roomPrice = 3000
+ let toiletPrice = 1000
+ let bathroomPrice = 1500
+ const [finalPrice, setFinalPrice ] = useState('')
+ let roomFumigationPrice = 7500
+ let livingRoomFumigationPrice = 10000
+
+  const [state, formAction] = useFormState(postBooking, undefined)
+
+useEffect(() => {
+ if (state?.success) {
+    router.push('/')
+ }
+},[state?.success]);
+
+
+
+const totalFumgatonPrice = roomFumigationPrice * Number(price.bedroom) + livingRoomFumigationPrice * Number(price.livingRoom) + 10000
+    const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.batheroom) + toiletPrice * Number(price.toilet) + 5000
+
+useEffect(() => {
+if(price.serviceType === 'Residential Fumigation') {
+    setFinalPrice(totalFumgatonPrice.toString())
+}
+if(price.serviceType === 'Office Fumigation') {
+    setFinalPrice('Custom price')
+}
+if(price.serviceType === 'Residential Cleaning') {
+    setFinalPrice(totalPrice.toString())
+}
+if(price.serviceType === 'Office Cleaning') {
+    setFinalPrice('Custom price')
+}
+if(price.serviceType === 'Event Cleaning') {
+    setFinalPrice('Custom price')
+}
+if(price.serviceType === 'Post Construction Cleaning') {
+    setFinalPrice('Custom price')
+}
+},[price.batheroom,price.bedroom, price.bookingDate, price.livingRoom, price.serviceType, price.toilet, price.price, finalPrice])
+
+
+  return (
+    <div className='booking-container'>
+        <div className='booking-inner-container'>
+      <h1 className=''>Boking Us</h1>
+      <form action={formAction}>
+      <div className='date-time-container grid md:grid-cols-3 gap-4 mt-5 mb-5'>
+     <div className=''>
+        <p className='mb-4'>Choose a date</p>
+      <input id='date' aria-label='Date' type='date' name='bookingDate' className='btn btn-outline w-40' onChange={(e:any) => setPrice({...price, bookingDate: e.target.value})}  />
+    </div>
+    <div className='time-container max-md:mb-4 flex col-span-2 md:justify-end max-md:mt-2'>
+   <div>
+    <p className='mb-4'>Please choose time</p>
+    <input className='time-input btn btn-outline mr-2' aria-label='8AM' id='first' type='radio' name='time' value='8am' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
+    <input className='time-input btn btn-outline mr-2' id='second' aria-label='10AM' type='radio' name='time' value='10am' onChange={(e:any) => setPrice({...price, time: e.target.value})}  />
+    <input className='time-input btn btn-outline mr-2' id='third' aria-label='12PM' type='radio' name='time' value='12pm' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
+    <input className='time-input btn btn-outline' aria-label='2PM' id='fourth' type='radio' name='time' value='2pm' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
+    </div>
+    </div>
+    </div>
+    <div className='other-input-container grid md:grid-cols-2 gap-4'>
+    <div className='group-input'>
+     <label className='other-input-label'>Full Name</label>
+     <input type="text" name='name' placeholder="Full name" className="input input-bordered w-full" required />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Email</label>
+     <input type="email" name='email' placeholder="Email" className="input input-bordered w-full" />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Phone</label>
+     <input type='tel' name='phone' placeholder="Phone" className="input input-bordered w-full" required />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Address</label>
+     <input type='text' name='address' placeholder="Address" className="input input-bordered w-full" required />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Service type</label>
+    <select name='serviceType' className="select select-bordered w-full" required onChange={(e:any) => setPrice({...price, serviceType: e.target.value})}>
+  <option>Service Type</option>
+  <option>Residential Cleaning</option>
+  <option>Office Cleaning</option>
+  <option>Event Cleaning</option>
+  <option>Post Construction Cleaning</option>
+  <option>Residential Fumigation</option>
+  <option>Office Fumigation</option>
+</select>
+</div>
+    <div className='group-input'>
+     <label className='other-input-label'>Type Of Property</label>
+     <input type='text' name='propertyType' placeholder="Type of property" className="input input-bordered w-full"  required  />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Bedroom</label>
+     <input type='text' name='bedroom' placeholder="Bedroom" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, bedroom: e.target.value})} />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Bathroom</label>
+     <input type='text' name='bathroom' placeholder="Bathroom" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, batheroom: e.target.value})} />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Living Room</label>
+     <input type='text' name='livingRoom' placeholder="Living room" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, livingRoom: e.target.value})} />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Toilet</label>
+     <input type='text' name='toilet' placeholder="Toilet" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, toilet: e.target.value})} />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Kitchen</label>
+     <input type='text' name='kitchen' placeholder="Kitchen" className="input input-bordered w-full" />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label '>More Details</label>
+     <textarea className="textarea textarea-bordered w-full"  name='moreInfo'  placeholder="More Details"></textarea>
+    </div>
+    <div className='group-input '>
+     <label className='other-input-label border-2 p-2 font-bold mt-4'>Price: <span className='ml-4 text-red-500'>{finalPrice !== 'Custom price'? 'NGN' : ''} {finalPrice}</span></label>
+     <input type='text' name='price' value={finalPrice} placeholder="price" className="input input-bordered w-full hidden" onChange={(e:any) => setPrice({...price, price: e.target.value})}  />
+    </div>
+    </div>
+    <button type='submit' className='btn mt-5'>Submit</button>
+    </form>
+    </div>
+    {state?.success &&
+    <div className="toast toast-top toast-end">
+  <div className="alert alert-success">
+    <span style={{color: '#ffffff'}}>{state?.success}</span>
+  </div>
+</div>
+}
+    </div>
+  )
+}
+
+export default page

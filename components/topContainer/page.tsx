@@ -3,6 +3,7 @@ import React from 'react'
 import team from '../../public/Vector1.svg'
 import clients from '../../public/Vector2.svg'
 import completed from '../../public/Vector3.svg'
+import Link from 'next/link'
 
 function TopContainer() {
   
@@ -13,8 +14,8 @@ function TopContainer() {
        <h1 className='heading lg:text-4xl md:text-3xl max-md:mb-0 max-md:mt-0'>Professional <span className='heading-span max-md:mb-0 max-md:mt-0 lg:text-4xl md:text-3xl'>Cleaning Service Provider</span></h1>
       <p className='para pt-4 max-sm:text-base'>Elevating spaces into sanctuaries of cleanliness</p>
       <div className="pt-10">
-    <a className="btn bg-navbar-btn topContainer-btn">Book now</a>
-  </div>
+     <Link href='/booking' className="btn bg-navbar-btn topContainer-btn">Book now</Link>
+    </div>
       </div>
       <div className='flex w-full justify-center lg:ml-8'>
        <div className='top-image-container-1 md:h-top-image-h md:w-top-image-w'>
