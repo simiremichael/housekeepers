@@ -33,7 +33,7 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
   } 
 
    const {name, address, phone, serviceType, email, time, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price } = validatedFields.data
-  console.log(name, address, phone, serviceType, email, time, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price)
+  
  await prisma.booking.create({
   data: {
     name,

@@ -54,7 +54,8 @@ if(price.serviceType === 'Event Cleaning') {
 if(price.serviceType === 'Post Construction Cleaning') {
     setFinalPrice('Custom price')
 }
-},[price.batheroom,price.bedroom, price.bookingDate, price.livingRoom, price.toilet, price.price, finalPrice, price.kitchen])
+
+},[price.batheroom,price.bedroom, price.serviceType, price.bookingDate, price.livingRoom, price.toilet, price.price, finalPrice, price.kitchen])
 
 
   return (
