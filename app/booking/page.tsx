@@ -14,11 +14,12 @@ function page() {
     dates.setDate(futureDate);
     const defaultDate = dates.toLocaleDateString('en-CA');
 
-const [price, setPrice ] = useState({livingRoom: '', bedroom: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '',})
+const [price, setPrice ] = useState({livingRoom: '', bedroom: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: ''})
  let livingroomPrice = 5000
  let roomPrice = 3000
  let toiletPrice = 1000
  let bathroomPrice = 1500
+ let kitchenPrice = 3000
  const [finalPrice, setFinalPrice ] = useState('')
  let roomFumigationPrice = 7500
  let livingRoomFumigationPrice = 10000
@@ -32,7 +33,7 @@ useEffect(() => {
 },[state?.success]);
 
 const totalFumgatonPrice = roomFumigationPrice * Number(price.bedroom) + livingRoomFumigationPrice * Number(price.livingRoom) + 10000
-    const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.batheroom) + toiletPrice * Number(price.toilet) + 5000
+    const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.batheroom) + toiletPrice * Number(price.toilet) + kitchenPrice * Number(price.kitchen) + 5000
 
 useEffect(() => {
 if(price.serviceType === 'Residential Fumigation') {
@@ -53,7 +54,7 @@ if(price.serviceType === 'Event Cleaning') {
 if(price.serviceType === 'Post Construction Cleaning') {
     setFinalPrice('Custom price')
 }
-},[price.batheroom,price.bedroom, price.bookingDate, price.livingRoom, price.serviceType, price.toilet, price.price, finalPrice])
+},[price.batheroom,price.bedroom, price.bookingDate, price.livingRoom, price.toilet, price.price, finalPrice, price.kitchen])
 
 
   return (
@@ -185,7 +186,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     { price.serviceType === 'Residential Fumigation' || price.serviceType === 'Residential Cleaning' ?
     <div className='group-input'>
      <label className='other-input-label'>Kitchen</label>
-     <select name='kitchen' className="select select-bordered w-full" >
+     <select name='kitchen' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, kitchen: e.target.value})}>
   <option className='text-gray-400' defaultValue=''>Kitchen</option>
   <option>1</option>
   <option>2</option>
