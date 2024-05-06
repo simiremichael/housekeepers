@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { postBooking } from '@/app/action';
 import { useFormState } from 'react-dom';
 import { useRouter } from 'next/navigation'
-import { stringify } from 'querystring';
 
 
 function page() {
@@ -69,7 +68,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
       <div className='date-time-container grid md:grid-cols-3 gap-4 mt-5 mb-5'>
      <div className=''>
         <p className='mb-4'>Choose a date</p>
-      <input id='date' aria-label='Date' type='date' name='bookingDate' className='btn btn-outline w-40' onChange={(e:any) => setPrice({...price, bookingDate: e.target.value})}  />
+      <input id='date' aria-label='Date' placeholder='Date' type='date' name='bookingDate' title='Date' className='btn btn-outline w-40' onChange={(e:any) => setPrice({...price, bookingDate: e.target.value})}  />
     </div>
     <div className='time-container max-md:mb-4 flex col-span-2 md:justify-end max-md:mt-2'>
    <div>

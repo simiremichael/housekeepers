@@ -1,5 +1,6 @@
 import Footer from '@/components/footer/page'
 import Navbar from '@/components/navbar/page'
+import Link from 'next/link'
 import React from 'react'
 
 function page() {
@@ -38,8 +39,8 @@ function page() {
        <div className='contact-left-inner-container md:ml-10 md:mt-12'>
          <div className='contact-left-details-container flex-1 items-center'>
           <h3 className='contact-left-heading'>Contact Us</h3>
-           <p className='contact-left-para'>Phone: <span className='ml-5 font-normal'>+2348114031903</span></p>
-           <p className='contact-left-para'>Email: <span className='ml-5 font-normal'>banigerialtd@gmail.com</span></p>
+           <p className='contact-left-para'>Phone: <Link href='tel:+2348114031903' className='ml-5 font-normal'>+2348114031903</Link></p>
+           <p className='contact-left-para'>Email: <Link href='mailto:banigerialtd@gmail.com' className='ml-5 font-normal'>banigerialtd@gmail.com</Link></p>
          </div>
        </div>
        </div>
