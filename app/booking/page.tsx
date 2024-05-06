@@ -9,12 +9,11 @@ function page() {
   
      const router = useRouter()
 
-    // const [state, formAction] = useFormState(postBooking, undefined)
-// const dates = new Date();
-//     const futureDate = dates.getDate() + 1;
-//     dates.setDate(futureDate);
-//     const defaultValue = dates.toLocaleDateString('en-CA');
-//     console.log(date, defaultValue)
+   const dates = new Date();
+    const futureDate = dates.getDate() + 1;
+    dates.setDate(futureDate);
+    const defaultDate = dates.toLocaleDateString('en-CA');
+
 const [price, setPrice ] = useState({livingRoom: '', bedroom: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '',})
  let livingroomPrice = 5000
  let roomPrice = 3000
@@ -62,21 +61,21 @@ if(price.serviceType === 'Post Construction Cleaning') {
   return (
     <div className='booking-container'>
         <div className='booking-inner-container'>
-    <a href='/' className='btn'>back</a>
+    <button onClick={() => router.back()} className='btn'>back</button>
       <h1 className='text-center font-bold'>Boking </h1>
       <form action={formAction}>
       <div className='date-time-container grid md:grid-cols-3 gap-4 mt-5 mb-5'>
      <div className=''>
         <p className='mb-4'>Choose a date</p>
-      <input id='date' aria-label='Date' placeholder='Date' type='date' name='bookingDate' title='Date' className='btn btn-outline w-40' onChange={(e:any) => setPrice({...price, bookingDate: e.target.value})}  />
+      <input id='date' aria-label='Date' defaultValue={defaultDate} placeholder='Date' type='date' name='bookingDate' title='Date' className='btn btn-outline w-40' onChange={(e:any) => setPrice({...price, bookingDate: e.target.value})}  />
     </div>
     <div className='time-container max-md:mb-4 flex col-span-2 md:justify-end max-md:mt-2'>
    <div>
     <p className='mb-4'>Please choose time</p>
-    <input className='time-input btn btn-outline mr-2' aria-label='8AM' id='first' type='radio' name='time' value='8am' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
-    <input className='time-input btn btn-outline mr-2' id='second' aria-label='10AM' type='radio' name='time' value='10am' onChange={(e:any) => setPrice({...price, time: e.target.value})}  />
-    <input className='time-input btn btn-outline mr-2' id='third' aria-label='12PM' type='radio' name='time' value='12pm' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
-    <input className='time-input btn btn-outline' aria-label='2PM' id='fourth' type='radio' name='time' value='2pm' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
+    <input className='time-input btn btn-outline mr-2' aria-label='8am' id='first' type='radio' name='time' value='8am' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
+    <input className='time-input btn btn-outline mr-2' id='second' aria-label='10am' type='radio' name='time' value='10am' onChange={(e:any) => setPrice({...price, time: e.target.value})}  />
+    <input className='time-input btn btn-outline mr-2' id='third' aria-label='12pm' type='radio' name='time' value='12pm' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
+    <input className='time-input btn btn-outline' aria-label='2pm' id='fourth' type='radio' name='time' value='2pm' onChange={(e:any) => setPrice({...price, time: e.target.value})} />
     </div>
     </div>
     </div>
@@ -100,7 +99,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     <div className='group-input'>
      <label className='other-input-label'>Service type</label>
     <select name='serviceType' className="select select-bordered w-full" required onChange={(e:any) => setPrice({...price, serviceType: e.target.value})}>
-  <option>Service Type</option>
+  <option className='text-gray-400'>Service Type</option>
   <option>Residential Cleaning</option>
   <option>Office Cleaning</option>
   <option>Event Cleaning</option>
