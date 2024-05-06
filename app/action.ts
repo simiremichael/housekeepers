@@ -11,17 +11,17 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
 
  const validatedFields = BookingFormSchema.safeParse({
     name: formData.get('name'),
-    time: formData.get('time'),
+    time: formData.get('time') ,
     email: formData.get('email'),
     address: formData.get('address'),
     phone: formData.get('phone'),
     serviceType: formData.get('serviceType'),
     bookingDate: formData.get('bookingDate'),
-    bedroom: formData.get('bedroom'),
-    bathroom: formData.get('bathroom'),
-    livingRoom: formData.get('livingRoom'),
+    bedroom: formData.get('bedroom') === null ? '' : formData.get('bedroom'),
+    bathroom: formData.get('bathroom') === null ? '' : formData.get('bathroom'),
+    livingRoom: formData.get('livingRoom') === null ? '' : formData.get('livingRoom'),
     toilet: formData.get('toilet'),
-    kitchen: formData.get('kitchen'),
+    kitchen: formData.get('kitchen') === null ? '' : formData.get('kitchen'),
     moreInfo: formData.get('moreInfo'),
     price: formData.get('price'),
   })
@@ -33,7 +33,7 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
   } 
 
    const {name, address, phone, serviceType, email, time, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price } = validatedFields.data
-  
+  console.log(name, address, phone, serviceType, email, time, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price)
  await prisma.booking.create({
   data: {
     name,
@@ -43,11 +43,11 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
     phone, 
     serviceType, 
     bookingDate, 
-    bedroom: bedroom !== null ? bedroom : '', 
-    bathroom: bathroom !== null ? bathroom : '', 
-    livingRoom: livingRoom !== null ? livingRoom : '', 
-    toilet: toilet !== null ? toilet : '', 
-    kitchen: kitchen !== null ? kitchen : '', 
+    bedroom: bedroom, 
+    bathroom: bathroom, 
+    livingRoom: livingRoom, 
+    toilet: toilet, 
+    kitchen: kitchen, 
     moreInfo, 
     price
   }

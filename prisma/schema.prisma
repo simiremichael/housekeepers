@@ -22,7 +22,7 @@ model Booking {
   phone       String
   serviceType String
   bedroom     String
-  bathroom    String
+  bathroom    BigInt
   livingRoom  String
   toilet      String
   kitchen     String
