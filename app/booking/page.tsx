@@ -31,7 +31,7 @@ useEffect(() => {
  }
 },[state?.success]);
 
-
+console.log(state)
 
 const totalFumgatonPrice = roomFumigationPrice * Number(price.bedroom) + livingRoomFumigationPrice * Number(price.livingRoom) + 10000
     const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.batheroom) + toiletPrice * Number(price.toilet) + 5000
@@ -99,7 +99,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     <div className='group-input'>
      <label className='other-input-label'>Service type</label>
     <select name='serviceType' className="select select-bordered w-full" required onChange={(e:any) => setPrice({...price, serviceType: e.target.value})}>
-  <option className='text-gray-400'>Service Type</option>
+  <option className='text-gray-400' defaultValue=''>Service Type</option>
   <option>Residential Cleaning</option>
   <option>Office Cleaning</option>
   <option>Event Cleaning</option>
@@ -108,38 +108,104 @@ if(price.serviceType === 'Post Construction Cleaning') {
   <option>Office Fumigation</option>
 </select>
 </div>
-    <div className='group-input'>
+    {/* <div className='group-input'>
      <label className='other-input-label'>Type Of Property</label>
      <input type='text' name='propertyType' placeholder="Type of property" className="input input-bordered w-full"  required  />
-    </div>
+    </div> */}
+    { price.serviceType === 'Residential Fumigation' || price.serviceType === 'Residential Cleaning' ?
     <div className='group-input'>
      <label className='other-input-label'>Bedroom</label>
-     <input type='text' name='bedroom' placeholder="Bedroom" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, bedroom: e.target.value})} />
+     <select name='bedroom' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, bedroom: e.target.value})}>
+  <option className='text-gray-400' defaultValue=''>Bedroom</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+  <option>10</option>
+   <option>10+</option>
+</select>
+     {/* <input type='text' name='bedroom' placeholder="Bedroom" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, bedroom: e.target.value})} /> */}
     </div>
+: ''}
+    { price.serviceType === 'Residential Fumigation' || price.serviceType === 'Residential Cleaning' ?
     <div className='group-input'>
      <label className='other-input-label'>Bathroom</label>
-     <input type='text' name='bathroom' placeholder="Bathroom" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, batheroom: e.target.value})} />
+     <select name='bathroom' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, batheroom: e.target.value})}>
+  <option className='text-gray-400' defaultValue=''>Bathroom</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+  <option>10</option>
+   <option>10+</option>
+</select>
+     {/* <input type='text' name='bathroom' placeholder="Bathroom" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, batheroom: e.target.value})} /> */}
     </div>
+ : ''}
+    { price.serviceType === 'Residential Fumigation' || price.serviceType === 'Residential Cleaning' ?
     <div className='group-input'>
      <label className='other-input-label'>Living Room</label>
-     <input type='text' name='livingRoom' placeholder="Living room" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, livingRoom: e.target.value})} />
+     <select name='livingRoom' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, livingRoom: e.target.value})}>
+  <option className='text-gray-400' defaultValue=''>Living Room</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5+</option>
+</select>
+     {/* <input type='text' name='livingRoom' placeholder="Living room" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, livingRoom: e.target.value})} /> */}
     </div>
+   : ''}
     <div className='group-input'>
      <label className='other-input-label'>Toilet</label>
-     <input type='text' name='toilet' placeholder="Toilet" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, toilet: e.target.value})} />
+     <select name='toilet' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, toilet: e.target.value})}>
+  <option className='text-gray-400' defaultValue=''>Toilet</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+  <option>10</option>
+   <option>10+</option>
+</select>
+     {/* <input type='text' name='toilet' placeholder="Toilet" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, toilet: e.target.value})} /> */}
     </div>
+    { price.serviceType === 'Residential Fumigation' || price.serviceType === 'Residential Cleaning' ?
     <div className='group-input'>
      <label className='other-input-label'>Kitchen</label>
-     <input type='text' name='kitchen' placeholder="Kitchen" className="input input-bordered w-full" />
+     <select name='kitchen' className="select select-bordered w-full" >
+  <option className='text-gray-400' defaultValue=''>Kitchen</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5+</option>
+</select>
+     {/* <input type='text' name='kitchen' placeholder="Kitchen" className="input input-bordered w-full" /> */}
     </div>
+  : '' }
     <div className='group-input'>
      <label className='other-input-label '>More Details</label>
      <textarea className="textarea textarea-bordered w-full"  name='moreInfo'  placeholder="More Details"></textarea>
     </div>
-    <div className='group-input '>
+    </div>
+    <div className='group-input mt-5'>
      <label className='other-input-label border-2 p-2 font-bold mt-4'>Price: <span className='ml-4 text-red-500'>{finalPrice !== 'Custom price'? 'NGN' : ''} {finalPrice}</span></label>
      <input type='text' name='price' value={finalPrice} placeholder="price" className="input input-bordered w-full hidden" onChange={(e:any) => setPrice({...price, price: e.target.value})}  />
-    </div>
     </div>
     {finalPrice === 'Custom price' &&
       <h5 className='text-xs text-blue-800 mt-5'>Please note that we need to carry out inspection to determine the price.</h5>

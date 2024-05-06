@@ -5,13 +5,12 @@ export const BookingFormSchema = z.object({
   phone: z.string(),
   address: z.string(),
   serviceType: z.string(),
-  propertyType: z.string(),
   bookingDate: z.string(), 
-  bedroom: z.string(), 
-  bathroom: z.string(), 
-  livingRoom: z.string(), 
-  toilet: z.string(), 
-  kitchen: z.string(), 
+  bedroom: z.any(), 
+  bathroom: z.any(), 
+  livingRoom: z.any(), 
+  toilet: z.any(), 
+  kitchen: z.any(), 
   moreInfo: z.string(), 
   price: z.string(), 
    time: z.string(),
@@ -24,15 +23,14 @@ export type FormState =
   email?: string[]
   phone?: string[]
   serviceType?: string[]
-  propertyType?: string[]
   address?: string[]
   name?: string[]
-  bedrooms?: string[]
-  bathrooms?: string[]
-  liveRoom?: string[]
-  toilet?: string[]
+  bedrooms?: any[]
+  bathrooms?: any[]
+  liveRoom?: any[]
+  toilet?: any[]
   moreInfo?: string[]
-  kitchen?: string[]
+  kitchen?: any[]
   price?: string[]
   time?: string[]
   bookinDate?: string[]

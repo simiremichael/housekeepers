@@ -15,21 +15,20 @@ datasource db {
 }
 
 model Booking {
-  id           Int      @id @default(autoincrement())
-  name         String
-  address      String
-  email        String
-  phone        String
-  serviceType  String
-  propertyType String
-  bedroom      String
-  bathroom     String
-  livingRoom   String
-  toilet       String
-  kitchen      String
-  moreInfo     String
-  price        String
-  bookingDate  String
-  time         String
-  createdAt    DateTime @default(now()) @db.Timestamp(6)
+  id          Int      @id @default(autoincrement())
+  name        String
+  address     String
+  email       String
+  phone       String
+  serviceType String
+  bedroom     String
+  bathroom    String
+  livingRoom  String
+  toilet      String
+  kitchen     String
+  moreInfo    String
+  price       String
+  bookingDate String
+  time        String
+  createdAt   DateTime @default(now()) @db.Timestamp(6)
 }

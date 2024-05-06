@@ -16,7 +16,6 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
     address: formData.get('address'),
     phone: formData.get('phone'),
     serviceType: formData.get('serviceType'),
-    propertyType: formData.get('propertyType'),
     bookingDate: formData.get('bookingDate'),
     bedroom: formData.get('bedroom'),
     bathroom: formData.get('bathroom'),
@@ -27,14 +26,14 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
     price: formData.get('price'),
   })
 
- 
+ console.log(formData, validatedFields)
    if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
    }
   } 
 
-   const {name, address, phone, serviceType, email, time, propertyType, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price } = validatedFields.data
+   const {name, address, phone, serviceType, email, time, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price } = validatedFields.data
   
  await prisma.booking.create({
   data: {
@@ -44,13 +43,12 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
     time,
     phone, 
     serviceType, 
-    propertyType, 
     bookingDate, 
-    bedroom, 
-    bathroom, 
-    livingRoom, 
-    toilet, 
-    kitchen, 
+    bedroom: bedroom !== null ? bedroom : '', 
+    bathroom: bathroom !== null ? bathroom : '', 
+    livingRoom: livingRoom !== null ? livingRoom : '', 
+    toilet: toilet !== null ? toilet : '', 
+    kitchen: kitchen !== null ? kitchen : '', 
     moreInfo, 
     price
   }
