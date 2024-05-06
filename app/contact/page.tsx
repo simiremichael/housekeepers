@@ -5,7 +5,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className=''>
+    <div className='bg-white'>
         <Navbar />
       <div className='contact-container mt-5'>
       <div className='contact-inner-container grid md:grid-cols-2'>

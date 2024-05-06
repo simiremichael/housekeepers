@@ -3,7 +3,7 @@ import React from 'react'
 
 function MiddleContainer() {
   return (
-    <div className='middle-container'>
+    <div className='middle-container bg-white'>
       <div className='big-frame-container grid grid-cols-1 md:grid-cols-2 pb-10'>
       <div className='right-container flex justify-center align-center'>
       <div className='big-frame bg-big-frame h-72 w-56 md:h-96 md:w-72'></div>

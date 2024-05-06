@@ -32,7 +32,7 @@ function page() {
        </div>
       </div>
     </div>
-     <div className='about-middle-container'>
+     <div className='about-middle-container bg-white'>
        <div className='about-middle-inner-container grid grid-cols-2 max-md:grid-cols-1'>
        <div className='about-middle-inner-l grid grid-cols-2 gap-2'>
         <div className='about-card lg:w-48 lg:h-40 flex flex-col justify-center items-center'>
@@ -81,7 +81,7 @@ customers.</p>
        </div>
        </div>
       </div>
-      <div className='middle-container'>
+      <div className='middle-container bg-white'> 
       <div className='big-frame-container grid grid-cols-1 md:grid-cols-2 pb-10'>
       <div className='left-container'>
        <div className='inner-container md:ml-16  max-md:mt-2'>

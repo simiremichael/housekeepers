@@ -10,7 +10,7 @@ function Footer() {
    const pathname = usePathname()
    
   return (
-    <div className='footer-container max-md:grid max-md:grid-cols-1'>
+    <div className='footer-container max-md:grid max-md:grid-cols-1 bg-white'>
         <div className='footer-inner-container mt-8'>
         <div className='footer-inner-top-container sm:flex sm:justify-between items-baseline'>
         <div className='footer-inner-left-container flex align-baseline items-baseline max-sm:justify-between max-sm:flex-col'>

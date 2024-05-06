@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function WhyContainer() {
   return (
-    <div className='why-container grid grid-cols-1 sm:grid-cols-2'>
+    <div className='why-container grid grid-cols-1 sm:grid-cols-2 bg-white'>
       <div className='why-left-container'>
       <Image src={whyBig} alt='clean   up' className=' sm:min-w-full rounded-3xl' />
       <div className='z-30 absolute sm:ml-why-small-img -mt-24 sm:-mt-28 why-small-img bg-why-small-img w-20 h-24 max-w-24 sm:h-28'></div>
