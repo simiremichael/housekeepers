@@ -31,8 +31,6 @@ useEffect(() => {
  }
 },[state?.success]);
 
-console.log(state)
-
 const totalFumgatonPrice = roomFumigationPrice * Number(price.bedroom) + livingRoomFumigationPrice * Number(price.livingRoom) + 10000
     const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.batheroom) + toiletPrice * Number(price.toilet) + 5000
 
@@ -204,7 +202,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     </div>
     </div>
     <div className='group-input mt-5'>
-     <label className='other-input-label border-2 p-2 font-bold mt-4'>Price: <span className='ml-4 text-red-500'>{finalPrice !== 'Custom price'? 'NGN' : ''} {finalPrice}</span></label>
+     <label className='other-input-label border-2 p-2 font-bold mt-4  bg-slate-600 text-white'>Price: <span className='ml-4 text-white'>{finalPrice !== 'Custom price'? 'NGN' : ''} {finalPrice}</span></label>
      <input type='text' name='price' value={finalPrice} placeholder="price" className="input input-bordered w-full hidden" onChange={(e:any) => setPrice({...price, price: e.target.value})}  />
     </div>
     {finalPrice === 'Custom price' &&

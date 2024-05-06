@@ -26,7 +26,6 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
     price: formData.get('price'),
   })
 
- console.log(formData, validatedFields)
    if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
