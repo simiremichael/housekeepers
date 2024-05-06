@@ -11,7 +11,7 @@ import WhyContainer from "@/components/whyContainer/page";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       <Navbar />
       <TopContainer />
       <MiddleContainer />

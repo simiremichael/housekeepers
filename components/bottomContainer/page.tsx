@@ -21,11 +21,11 @@ function BottomContainer() {
  <p className='testimonies-card-title'>Golf Mews</p>
   <div>
   <div className="rating max-sm:rating-xs sm:rating-sm mt-3 ml-4">
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='one' readOnly />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='two'  readOnly />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='three'  readOnly />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='four'  readOnly />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"defaultValue='five'  checked readOnly />
 </div>
   </div>
  </div>
@@ -55,11 +55,11 @@ function BottomContainer() {
  <p className='testimonies-card-title'>CEO, marvdav ltd</p>
   <div>
   <div className="rating max-sm:rating-xs sm:rating-sm mt-3 ml-4">
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='one' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='two' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='three' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='four' readOnly />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked defaultValue='five' readOnly />
 </div>
   </div>
  </div>
@@ -89,11 +89,11 @@ function BottomContainer() {
  <p className='testimonies-card-title'>Consultant</p>
   <div>
   <div className="rating max-sm:rating-xs sm:rating-sm mt-3 ml-4">
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='one' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='two' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='three' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='four' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked defaultValue='five' readOnly  />
 </div>
   </div>
  </div>
@@ -123,11 +123,11 @@ function BottomContainer() {
  <p className='testimonies-card-title'>Admin, Xella Ltd</p>
   <div>
   <div className="rating max-sm:rating-xs sm:rating-sm mt-3 ml-4">
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='one' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='two' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='three' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultValue='four' readOnly  />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked defaultValue='five' readOnly  />
 </div>
   </div>
  </div>

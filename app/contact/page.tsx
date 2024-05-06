@@ -1,9 +1,13 @@
+'use client'
 import Footer from '@/components/footer/page'
 import Navbar from '@/components/navbar/page'
 import Link from 'next/link'
 import React from 'react'
 
 function page() {
+
+  const [formData, setFormData] = React.useState({name: '', email: '', phone: '', message: ''})
+
   return (
     <div className='bg-white'>
         <Navbar />
@@ -15,19 +19,19 @@ function page() {
         <form>
         <div className='inner-input-container mb-2'>
         <label className='contact-label' id='name' style={{display: 'block'}}>Name</label>
-        <input id='name' name='name' type="text" placeholder="Name" className="input input-bordered w-full" />
+        <input id='name' name='name' type="text" placeholder="Name" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, name: e.target.value})} />
        </div>
        <div className='inner-input-container mb-2'>
         <label className='contact-label' id='email' style={{display: 'block'}}>Email</label>
-        <input id='email' name='email' type="text" placeholder="email" className="input input-bordered w-full " />
+        <input id='email' name='email' type="text" placeholder="email" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, email: e.target.value})} />
        </div>
        <div className='inner-input-container mb-2'>
         <label className='contact-label' id='phone' style={{display: 'block'}}>Phone</label>
-        <input id='phone' name='phone' type="text" placeholder="Phone" className="input input-bordered w-full" />
+        <input id='phone' name='phone' type="text" placeholder="Phone" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, phone: e.target.value})} />
        </div>
        <div className='inner-input-container mb-2'>
         <label className='contact-label' id='message' style={{display: 'block'}}>Message</label>
-        <textarea className="textarea textarea-bordered w-full" name='message' id='message' placeholder="Message"></textarea>
+        <textarea className="textarea textarea-bordered w-full" name='message' id='message' placeholder="Message" onChange={(e:any) => setFormData({...formData, message: e.target.value})}></textarea>
        </div>
        <div className='flex justify-center mt-5 mb-5'>
        <button className="btn bg-navbar-btn topContainer-btn">Submit</button>

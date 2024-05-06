@@ -14,7 +14,7 @@ function page() {
     dates.setDate(futureDate);
     const defaultDate = dates.toLocaleDateString('en-CA');
 
-const [price, setPrice ] = useState({livingRoom: '', bedroom: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: ''})
+const [price, setPrice ] = useState({livingRoom: '', bedroom: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: '', name: '', email: '', phone: '', address: '', moreInfo: '' })
  let livingroomPrice = 5000
  let roomPrice = 3000
  let toiletPrice = 1000
@@ -82,19 +82,19 @@ if(price.serviceType === 'Post Construction Cleaning') {
     <div className='other-input-container grid md:grid-cols-2 gap-4'>
     <div className='group-input'>
      <label className='other-input-label'>Full Name</label>
-     <input type="text" name='name' placeholder="Full name" className="input input-bordered w-full" required />
+     <input type="text" name='name' placeholder="Full name" className="input input-bordered w-full" required onChange={(e:any) => setPrice({...price, name: e.target.value})} />
     </div>
     <div className='group-input'>
      <label className='other-input-label'>Email</label>
-     <input type="email" name='email' placeholder="Email" className="input input-bordered w-full" />
+     <input type="email" name='email' placeholder="Email" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, email: e.target.value})} />
     </div>
     <div className='group-input'>
      <label className='other-input-label'>Phone</label>
-     <input type='tel' name='phone' placeholder="Phone" className="input input-bordered w-full" required />
+     <input type='tel' name='phone' placeholder="Phone" className="input input-bordered w-full" required onChange={(e:any) => setPrice({...price, phone: e.target.value})} />
     </div>
     <div className='group-input'>
      <label className='other-input-label'>Address</label>
-     <input type='text' name='address' placeholder="Address" className="input input-bordered w-full" required />
+     <input type='text' name='address' placeholder="Address" className="input input-bordered w-full" required onChange={(e:any) => setPrice({...price, address: e.target.value})} />
     </div>
     <div className='group-input'>
      <label className='other-input-label'>Service type</label>
@@ -200,7 +200,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
   : '' }
     <div className='group-input'>
      <label className='other-input-label '>More Details</label>
-     <textarea className="textarea textarea-bordered w-full"  name='moreInfo'  placeholder="More Details"></textarea>
+     <textarea className="textarea textarea-bordered w-full"  name='moreInfo'  placeholder="More Details" onChange={(e:any) => setPrice({...price, moreInfo: e.target.value})}></textarea>
     </div>
     </div>
     <div className='group-input mt-5'>
