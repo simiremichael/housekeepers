@@ -141,6 +141,9 @@ if(price.serviceType === 'Post Construction Cleaning') {
      <input type='text' name='price' value={finalPrice} placeholder="price" className="input input-bordered w-full hidden" onChange={(e:any) => setPrice({...price, price: e.target.value})}  />
     </div>
     </div>
+    {finalPrice === 'Custom price' &&
+      <h5 className='text-xs text-blue-800 mt-5'>Please note that we need to carry out inspection to determine the price.</h5>
+      }
     <button type='submit' className='btn mt-5'>Submit</button>
     </form>
     </div>
