@@ -1,6 +1,6 @@
  "use server"
  import { PrismaClient, Prisma } from '@prisma/client'
-import { BookingFormSchema, FormState} from './app/lib/utils'
+import { BookingFormSchema, FormState} from './lib/utils'
 import { revalidatePath } from 'next/cache';
 
 

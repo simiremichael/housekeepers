@@ -1,6 +1,6 @@
  'use client'
 import React, { useEffect, useState } from 'react'
-import { postBooking } from '@/action';
+import { postBooking } from '@/app/action';
 import { useFormState } from 'react-dom';
 import { useRouter } from 'next/navigation'
 import { stringify } from 'querystring';
