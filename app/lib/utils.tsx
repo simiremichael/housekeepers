@@ -1,11 +1,11 @@
 import { z } from 'zod'
  
 export const BookingFormSchema = z.object({
-  name: z.string(),
-  phone: z.string(),
-  address: z.string(),
+  name: z.string({required_error: "Name is required"}),
+  phone: z.string({required_error: "Phone is required"}),
+  address: z.string({required_error: "Address is required"}),
   serviceType: z.string(),
-  bookingDate: z.string(), 
+  bookingDate: z.string({required_error: "Bookng is required"}), 
   bedroom: z.any(), 
   bathroom: z.any(), 
   livingRoom: z.any(), 
@@ -13,8 +13,8 @@ export const BookingFormSchema = z.object({
   kitchen: z.any(), 
   moreInfo: z.string(), 
   price: z.string(), 
-   time: z.string(),
-   email: z.string(),
+  time: z.string({required_error: "Time is required"}),
+  email: z.string(),
 })
  
 export type FormState =
