@@ -62,7 +62,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     <div className='booking-container'>
         <div className='booking-inner-container'>
     <button onClick={() => router.back()} className='btn'>back</button>
-      <h1 className='text-center font-bold'>Boking </h1>
+      <h1 className='text-center font-bold'>Booking</h1>
       <form action={formAction}>
       <div className='date-time-container grid md:grid-cols-3 gap-4 mt-5 mb-5'>
      <div className=''>
