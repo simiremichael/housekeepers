@@ -24,6 +24,7 @@ const [price, setPrice ] = useState({livingRoom: '', bedroom: '', state: '', loc
  let roomFumigationPrice = 7500
  let livingRoomFumigationPrice = 10000
 
+   {/* @ts-ignore */}
   const [formState, formAction] = useFormState(postBooking, undefined)
 
 useEffect(() => {
@@ -104,7 +105,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
      <label className='other-input-label'>State</label>
      <select name='state' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, state: e.target.value})} required>
   <option className='text-gray-400' defaultValue=''>State</option>
-  <option value="">STATE</option>
+  <option defaultValue=''>STATE</option>
       <option>Lagos</option>
       <option>Abuja</option>
       <option>Rivers</option>
