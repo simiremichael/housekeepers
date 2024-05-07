@@ -14,7 +14,7 @@ function page() {
     dates.setDate(futureDate);
     const defaultDate = dates.toLocaleDateString('en-CA');
 
-const [price, setPrice ] = useState({livingRoom: '', bedroom: '', state: '', location: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: '', name: '', email: '', phone: '', address: '', moreInfo: '' })
+const [price, setPrice ] = useState({livingRoom: '', bedroom: '', states: '', location: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: '', name: '', email: '', phone: '', address: '', moreInfo: '' })
  let livingroomPrice = 5000
  let roomPrice = 3000
  let toiletPrice = 1000
@@ -24,14 +24,14 @@ const [price, setPrice ] = useState({livingRoom: '', bedroom: '', state: '', loc
  let roomFumigationPrice = 7500
  let livingRoomFumigationPrice = 10000
 
-   {/* @ts-ignore */}
-  const [formState, formAction] = useFormState(postBooking, undefined)
+
+  const [ state, formAction] = useFormState(postBooking, undefined)
 
 useEffect(() => {
- if (formState?.success) {
+ if (state?.success) {
     router.push('/')
  }
-},[formState?.success]);
+},[state?.success]);
 
 const totalFumgatonPrice = roomFumigationPrice * Number(price.bedroom) + livingRoomFumigationPrice * Number(price.livingRoom) + 10000
     const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.batheroom) + toiletPrice * Number(price.toilet) + kitchenPrice * Number(price.kitchen) + 5000
@@ -103,7 +103,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     </div>
     <div className='group-input'>
      <label className='other-input-label'>State</label>
-     <select name='state' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, state: e.target.value})} required>
+     <select name='state' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, states: e.target.value})} required>
   <option className='text-gray-400' defaultValue=''>State</option>
   <option defaultValue=''>STATE</option>
       <option>Lagos</option>
@@ -231,10 +231,10 @@ if(price.serviceType === 'Post Construction Cleaning') {
     <button type='submit' className='btn mt-5'>Submit</button>
     </form>
     </div>
-    {formState?.success &&
+    {state?.success &&
     <div className="toast toast-top toast-end">
   <div className="alert alert-success"> 
-    <span style={{color: '#ffffff'}}>{formState?.success}</span>
+    <span style={{color: '#ffffff'}}>{state?.success}</span>
   </div>
 </div>
 }
