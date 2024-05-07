@@ -3,10 +3,40 @@ import Footer from '@/components/footer/page'
 import Navbar from '@/components/navbar/page'
 import Link from 'next/link'
 import React from 'react'
+import emailjs from '@emailjs/browser';
+import { useRouter } from 'next/navigation'
 
 function page() {
 
   const [formData, setFormData] = React.useState({name: '', email: '', phone: '', message: ''})
+
+  const [alert, setAlert] = React.useState('')
+
+  const router = useRouter()
+
+   const sendMail = React.useRef();
+
+  const sendEmail = (e:any) => {
+    e.preventDefault();
+
+    // @ts-ignore
+    emailjs.sendForm('service_rj85u9b', 'template_08yurua', sendMail?.current, 'user_OjPcBuLBsMA0wASXXMw7Z')
+      .then((result) => {
+          console.log(result.text);
+          setAlert(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+
+      // router.push('/')
+  };
+
+  console.log(alert);
+  React.useEffect(() => {
+    if (alert !== ''){
+   router.push('/')
+    }
+  },[alert])
 
   return (
     <div className='bg-white'>
@@ -16,7 +46,8 @@ function page() {
        <div className='contact-right-container'>
         <h1 className='contact-heading mb-5'>Send us a Message</h1>
        <div className='input-container'>
-        <form>
+         {/* @ts-ignore */}
+        <form ref={sendMail} onSubmit={sendEmail}>
         <div className='inner-input-container mb-2'>
         <label className='contact-label' id='name' style={{display: 'block'}}>Name</label>
         <input id='name' name='name' type="text" placeholder="Name" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, name: e.target.value})} />
@@ -64,6 +95,14 @@ function page() {
          <svg width={14} fill=' #E3B510' className='mr-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"/></svg>
         Event Cleaning</h6>
     </div>
+    <>
+    { alert !== '' ?
+    <div className="toast toast-top toast-end">
+  <div className="alert alert-success">
+    <span style={{color: '#ffffff'}}>Meesage sent successfully</span>
+  </div>
+</div>
+  : '' } </>
       <Footer />
     </div>
   )
