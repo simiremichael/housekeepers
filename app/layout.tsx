@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Cleaning Services Nigeria | Top Rated Cleaning Company Nigeria",
   description: "B&A Housekeepers: Your trusted home and commercial space cleaning company in Nigeria. Providing cleaning services for housekeeping, offices, industrial, events and residential spaces. Satisfaction quaranteed!",
+manifest: "/manifest.json",
 };
 
 export default function RootLayout({
