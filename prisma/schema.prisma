@@ -20,6 +20,8 @@ model Booking {
   address     String
   email       String
   phone       String
+  state       String
+  location    String
   serviceType String
   bedroom     String
   bathroom    BigInt

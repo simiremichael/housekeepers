@@ -6,7 +6,7 @@ import { revalidatePath } from 'next/cache';
 
     const prisma = new PrismaClient()
 
-export const postBooking = async (state:  FormState, formData: FormData) => {
+export const postBooking = async (formstate:  FormState, formData: FormData) => {
 //{name, address, phone, serviceType, email, time, propertyType, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price}
 
  const validatedFields = BookingFormSchema.safeParse({
@@ -14,6 +14,8 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
     time: formData.get('time') ,
     email: formData.get('email'),
     address: formData.get('address'),
+    location: formData.get('location'),
+    state: formData.get('state'),
     phone: formData.get('phone'),
     serviceType: formData.get('serviceType'),
     bookingDate: formData.get('bookingDate'),
@@ -32,7 +34,7 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
    }
   } 
 
-   const {name, address, phone, serviceType, email, time, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price } = validatedFields.data
+   const {name, address, phone, serviceType, state, location, email, time, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price } = validatedFields.data
   
  await prisma.booking.create({
   data: {
@@ -41,6 +43,8 @@ export const postBooking = async (state:  FormState, formData: FormData) => {
     email,
     time,
     phone, 
+    state,
+    location,
     serviceType, 
     bookingDate, 
     bedroom: bedroom, 

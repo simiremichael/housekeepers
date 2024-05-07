@@ -14,7 +14,7 @@ function page() {
     dates.setDate(futureDate);
     const defaultDate = dates.toLocaleDateString('en-CA');
 
-const [price, setPrice ] = useState({livingRoom: '', bedroom: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: '', name: '', email: '', phone: '', address: '', moreInfo: '' })
+const [price, setPrice ] = useState({livingRoom: '', bedroom: '', state: '', location: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: '', name: '', email: '', phone: '', address: '', moreInfo: '' })
  let livingroomPrice = 5000
  let roomPrice = 3000
  let toiletPrice = 1000
@@ -24,13 +24,13 @@ const [price, setPrice ] = useState({livingRoom: '', bedroom: '', batheroom: '',
  let roomFumigationPrice = 7500
  let livingRoomFumigationPrice = 10000
 
-  const [state, formAction] = useFormState(postBooking, undefined)
+  const [formState, formAction] = useFormState(postBooking, undefined)
 
 useEffect(() => {
- if (state?.success) {
+ if (formState?.success) {
     router.push('/')
  }
-},[state?.success]);
+},[formState?.success]);
 
 const totalFumgatonPrice = roomFumigationPrice * Number(price.bedroom) + livingRoomFumigationPrice * Number(price.livingRoom) + 10000
     const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.batheroom) + toiletPrice * Number(price.toilet) + kitchenPrice * Number(price.kitchen) + 5000
@@ -95,6 +95,23 @@ if(price.serviceType === 'Post Construction Cleaning') {
     <div className='group-input'>
      <label className='other-input-label'>Address</label>
      <input type='text' name='address' placeholder="Address" className="input input-bordered w-full" required onChange={(e:any) => setPrice({...price, address: e.target.value})} />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>Location</label>
+     <input type='text' name='location' placeholder="Location" className="input input-bordered w-full" required onChange={(e:any) => setPrice({...price, location: e.target.value})} />
+    </div>
+    <div className='group-input'>
+     <label className='other-input-label'>State</label>
+     <select name='state' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, state: e.target.value})} required>
+  <option className='text-gray-400' defaultValue=''>State</option>
+  <option value="">STATE</option>
+      <option>Lagos</option>
+      <option>Abuja</option>
+      <option>Rivers</option>
+      <option>Edo</option>
+      <option>Delta</option>
+</select>
+     {/* <input type='text' name='bedroom' placeholder="Bedroom" className="input input-bordered w-full" onChange={(e:any) => setPrice({...price, bedroom: e.target.value})} /> */}
     </div>
     <div className='group-input'>
      <label className='other-input-label'>Service type</label>
@@ -213,10 +230,10 @@ if(price.serviceType === 'Post Construction Cleaning') {
     <button type='submit' className='btn mt-5'>Submit</button>
     </form>
     </div>
-    {state?.success &&
+    {formState?.success &&
     <div className="toast toast-top toast-end">
-  <div className="alert alert-success">
-    <span style={{color: '#ffffff'}}>{state?.success}</span>
+  <div className="alert alert-success"> 
+    <span style={{color: '#ffffff'}}>{formState?.success}</span>
   </div>
 </div>
 }

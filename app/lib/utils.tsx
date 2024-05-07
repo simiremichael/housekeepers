@@ -9,6 +9,8 @@ export const BookingFormSchema = z.object({
   bedroom: z.any(), 
   bathroom: z.any(), 
   livingRoom: z.any(), 
+  state: z.any(), 
+  location: z.any(),
   toilet: z.any(), 
   kitchen: z.any(), 
   moreInfo: z.string(), 
@@ -33,6 +35,8 @@ export type FormState =
   kitchen?: any[]
   price?: string[]
   time?: string[]
+  state?: string[]
+  location?: string
   bookinDate?: string[]
       }
       message?: string
