@@ -31,7 +31,6 @@ function page() {
       // router.push('/')
   };
 
-  console.log(alert);
   React.useEffect(() => {
     if (alert !== ''){
    router.push('/')
@@ -50,19 +49,19 @@ function page() {
         <form ref={sendMail} onSubmit={sendEmail}>
         <div className='inner-input-container mb-2'>
         <label className='contact-label' id='name' style={{display: 'block'}}>Name</label>
-        <input id='name' name='name' type="text" placeholder="Name" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, name: e.target.value})} />
+        <input id='name' name='name' type="text" placeholder="Name" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, name: e.target.value})} required />
        </div>
        <div className='inner-input-container mb-2'>
         <label className='contact-label' id='email' style={{display: 'block'}}>Email</label>
-        <input id='email' name='email' type="text" placeholder="email" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, email: e.target.value})} />
+        <input id='email' name='email' type="text" placeholder="email" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, email: e.target.value})} required />
        </div>
        <div className='inner-input-container mb-2'>
         <label className='contact-label' id='phone' style={{display: 'block'}}>Phone</label>
-        <input id='phone' name='phone' type="text" placeholder="Phone" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, phone: e.target.value})} />
+        <input id='phone' name='phone' type="text" placeholder="Phone" className="input input-bordered w-full" onChange={(e:any) => setFormData({...formData, phone: e.target.value})} required />
        </div>
        <div className='inner-input-container mb-2'>
         <label className='contact-label' id='message' style={{display: 'block'}}>Message</label>
-        <textarea className="textarea textarea-bordered w-full" name='message' id='message' placeholder="Message" onChange={(e:any) => setFormData({...formData, message: e.target.value})}></textarea>
+        <textarea className="textarea textarea-bordered w-full" name='message' id='message' placeholder="Message" onChange={(e:any) => setFormData({...formData, message: e.target.value})} required></textarea>
        </div>
        <div className='flex justify-center mt-5 mb-5'>
        <button className="btn bg-navbar-btn topContainer-btn">Submit</button>
