@@ -49,7 +49,7 @@ const config: Config = {
     },
   },
   daisyui: {
-    themes: ["light", "dark", "cupcake", "forest", "sunset", "retro"],
+    themes: ["light"],
   },
   plugins: [require("daisyui")],
 };
