@@ -68,7 +68,7 @@ function page() {
        <div className='about-middle-inner-r'>
         <div className='about-middle-inner-r-text-container md:mt-5 lg:mt-14'>
           <h3
-          className='about-middle-r-h'>We Are The Fastest Growing Cleaning Companies</h3>
+          className='about-middle-r-h'>We Are The Fastest Growing Cleaning Company</h3>
          <p className='about-middle-r-text'>Our cleaning services is growing quickly. We
 provide excellent service that keeps customers
 coming back. Our staff work hard to keep your
