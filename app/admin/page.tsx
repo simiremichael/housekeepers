@@ -10,7 +10,7 @@ import cardIcon3 from '../../public/admin-card-icon3.png'
 
 function page() {
   return (
-    <div className='admin-container'>
+    <div className='admin-container relative'>
         <AdminNavbar />
         <div className='admin-body-container md:grid md:grid-cols-6'>
             <div className='flex items-center drawer-search-container max-md:mt-3 md:hidden'>
@@ -41,22 +41,22 @@ function page() {
     </ul>
     </div>
     <div className='admin-main-content-container col-span-5'>
-     <h1 className='border-b-gray border-b-2 w-20'>Dashboard</h1>
-     <div className='admin-card-container flex md:gap-4 gap-2'>
-       <div className='card -z-9 admin-card bg-white flex items-center justify-center'>
-        <h2 className='admin-card-figure font-bold md:mb-4'>34</h2>
-        <p className='admin-card-text'>New Bookings</p>
-        <Image src={cardIcon1} className=' max-md:w-3 mt-2 admin-card-icon z-20 absolute right-4 md:top-10' alt='icon' />
+     <h1 className='border-b-gray border-b-2 w-20 max-md:mt-5'>Dashboard</h1>
+     <div className='admin-card-container flex md:gap-4 gap-2 mt-4'>
+       <div className='admin-card bg-white flex items-center justify-center md:h-32'>
+        <h2 className='admin-card-figure font-bold md:mb-4 md:text-xl lg:text-2xl'>34</h2>
+        <p className='admin-card-text md:text-base'>New Bookings</p>
+        <Image src={cardIcon1} className=' max-md:w-3 mt-2 admin-card-icon absolute md:-mt-12 md:mr-3 lg:mr-16' alt='icon' />
        </div>
-        <div className='card admin-card bg-white flex items-center justify-center'>
-        <h2 className='admin-card-figure font-bold md:mb-4'>34</h2>
-        <p className='admin-card-text'>Upcoming Appointments</p>
-        <Image src={cardIcon2} className='max-md:w-6 admin-card-icon z-20 absolute right-4 md:top-10' alt='icon' />
+        <div className='admin-card bg-white flex items-center justify-center md:h-32'>
+        <h2 className='admin-card-figure font-bold md:mb-4 md:text-xl lg:text-2xl'>34</h2>
+        <p className='admin-card-text md:text-base'>Upcoming Appointments</p>
+        <Image src={cardIcon2} className='max-md:w-6 admin-card-icon absolute md:-mt-12 md:mr-3 lg:mr-16' alt='icon' />
        </div>
-        <div className='card admin-card bg-white flex items-center justify-center'>
-        <h2 className='admin-card-figure font-bold md:mb-4'><span className='mr-1'>₦</span>34</h2>
-        <p className='admin-card-text'>Revenue</p>
-        <Image src={cardIcon3} className='max-md:w-6 admin-card-icon z-20 absolute right-4 md:top-10' alt='icon' />
+        <div className='admin-card bg-white flex items-center justify-center md:h-32'>
+        <h2 className='admin-card-figure font-bold md:mb-4 md:text-xl lg:text-2xl'><span className='mr-1'>₦</span>34</h2>
+        <p className='admin-card-text md:text-base'>Revenue</p>
+        <Image src={cardIcon3} className='max-md:w-6 admin-card-icon absolute md:-mt-12 md:mr-3 lg:mr-16 ' alt='icon' />
        </div>
      </div>
      </div>

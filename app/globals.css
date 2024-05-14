@@ -927,9 +927,13 @@ input {
   width: 266px;
     height: 100px;
     border: 0.44px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
 }
 .admin-card-figure {
 font-size: 16px;
+margin-bottom: 8px;
 }
 
 .admin-card-text {
@@ -938,6 +942,6 @@ width: 100%;
 text-align: center;
 }
 .admin-card-icon {
-  top: 22px;
-  right: 10px;
+margin: -8% 0px 0px 20%;
+z-index: 10px;
 }
