@@ -50,7 +50,7 @@ function page() {
        </div>
         <div className='admin-card bg-white flex items-center justify-center md:h-32'>
         <h2 className='admin-card-figure font-bold md:mb-4 md:text-xl lg:text-2xl'>34</h2>
-        <p className='admin-card-text md:text-base'>Upcoming Appointments</p>
+        <p className='admin-card-text md:text-base'>Appointments</p>
         <Image src={cardIcon2} className='max-md:w-6 admin-card-icon absolute md:-mt-12 md:mr-3 lg:mr-16' alt='icon' />
        </div>
         <div className='admin-card bg-white flex items-center justify-center md:h-32'>
