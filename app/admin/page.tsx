@@ -43,19 +43,19 @@ function page() {
     <div className='admin-main-content-container col-span-5'>
      <h1 className='border-b-gray border-b-2 w-20'>Dashboard</h1>
      <div className='admin-card-container flex md:gap-4 gap-2'>
-       <div className='card admin-card bg-white flex items-center justify-center'>
+       <div className='card -z-9 admin-card bg-white flex items-center justify-center'>
         <h2 className='admin-card-figure font-bold md:mb-4'>34</h2>
         <p className='admin-card-text'>New Bookings</p>
         <Image src={cardIcon1} className=' max-md:w-3 mt-2 admin-card-icon z-20 absolute right-4 md:top-10' alt='icon' />
        </div>
         <div className='card admin-card bg-white flex items-center justify-center'>
         <h2 className='admin-card-figure font-bold md:mb-4'>34</h2>
-        <p className='admin-card-text'>New Bookings</p>
+        <p className='admin-card-text'>Upcoming Appointments</p>
         <Image src={cardIcon2} className='max-md:w-6 admin-card-icon z-20 absolute right-4 md:top-10' alt='icon' />
        </div>
         <div className='card admin-card bg-white flex items-center justify-center'>
         <h2 className='admin-card-figure font-bold md:mb-4'><span className='mr-1'>₦</span>34</h2>
-        <p className='admin-card-text'>New Bookings</p>
+        <p className='admin-card-text'>Revenue</p>
         <Image src={cardIcon3} className='max-md:w-6 admin-card-icon z-20 absolute right-4 md:top-10' alt='icon' />
        </div>
      </div>
