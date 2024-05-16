@@ -1,14 +1,38 @@
+"use client"
 import AdminNavbar from '@/components/AdminNavbar/page'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import drawer1 from '../../public/drawer-icon1.png'
 import drawer2 from '../../public/drawer-icon2.png'
 import cardIcon1 from '../../public/admin-card-icon1.png'
 import cardIcon2 from '../../public/admin-card-icon2.png'
-import cardIcon3 from '../../public/admin-card-icon3.png'
+import cardIcon3 from '../../public/admin-card-icon3.png' 
+import {getBookingBy} from '../api/router'
+import moment from 'moment'
+
 
 function page() {
+ const dates = new Date();
+    const futureDate = dates.getDate();
+    dates.setDate(futureDate);
+    const defaultDate = dates.toLocaleDateString('en-CA');
+    const [date, setDate] = useState(defaultDate)
+    const [datas, setDatas] = useState<any>([])
+    // const data = getBookingBy(date)
+
+    // data.then((data) => 
+    // console.log(data)
+    // )
+    useEffect(() => {
+      const data = getBookingBy(date)
+         data.then((data) => 
+        setDatas(data)
+        )
+    }, [date])
+
+    console.log(datas)
+
   return (
     <div className='admin-container relative'>
         <AdminNavbar />
@@ -58,6 +82,73 @@ function page() {
         <p className='admin-card-text md:text-base'>Revenue</p>
         <Image src={cardIcon3} className='max-md:w-6 admin-card-icon absolute md:-mt-12 md:mr-3 lg:mr-16 ' alt='icon' />
        </div>
+     </div>
+     <div className='bookings-container bg-white grid md:grid-cols-3 mt-3'>
+     <input type="date" value={date} onChange={(e:any) => setDate(e.target.value)} className="btn" placeholder="" />
+     <div className='booking-list-container col-span-2'>
+<div className="overflow-x-auto">
+  <table className="table">
+    {/* head */}
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Service type</th>
+        <th>Bedroom</th>
+        <th>Bathroom</th>
+        <th>Living Room</th>
+        <th>Toilet</th>
+        <th>Kitchen</th>
+        <th>Note</th>
+        <th>Price</th>
+        <th>Booking date</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>State</th>
+        <th>Date posted</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {datas?.map((item: any) => 
+      <tr className="bg-base-200" key={item?.id}>
+        <th>
+          <div className="avatar placeholder">
+           <div className="bg-neutral text-neutral-content rounded-full w-8">
+            <span className="text-xs">{item?.name.slice(0,1).toUpperCase()}</span>
+           </div>
+          </div>
+        </th>
+        <td>{item?.name}</td>
+        <td>{item?.address}</td>
+        <td>{item?.email}</td>
+        <td>{item.phone}</td>
+        <td>{item?.serviceType}</td>
+        <td>{item?.bedroom}</td>
+        <td>{item?.bathroom}</td>
+        <td>{item?.livingRoom}</td>
+        <td>{item?.toilet}</td>
+        <td>{item?.kitchen}</td>
+        <td>{item?.moreInfo}</td>
+        <td>{item?.price}</td>
+        <td>{item?.bookingDate}</td>
+        <td>{item?.time}</td>
+        <td>{item?.location}</td>
+        <td>{item?.state}</td>
+        <td>{moment().fromNow(item?.createdAt)}</td>
+        <td><button>Edit</button></td>
+        <td><button>Delete</button></td>
+      </tr>
+      )}
+    </tbody>
+  </table>
+</div>
+     </div>
      </div>
      </div>
      </div>

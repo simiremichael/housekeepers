@@ -24,7 +24,7 @@ model Booking {
   location    String
   serviceType String
   bedroom     String
-  bathroom    BigInt
+  bathroom    String
   livingRoom  String
   toilet      String
   kitchen     String

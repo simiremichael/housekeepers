@@ -935,6 +935,9 @@ input {
 font-size: 16px;
 margin-bottom: 8px;
 }
+.bookings-container {
+  background-color: #f1f0f0;
+}
 
 .admin-card-text {
 font-size: 12px;

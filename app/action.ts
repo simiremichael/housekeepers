@@ -6,7 +6,7 @@ import { revalidatePath } from 'next/cache';
 
     const prisma = new PrismaClient()
 
-export const postBooking = async (formstate:  FormState, formData: FormData) => {
+export const postBooking = async (formstate: FormState, formData: FormData) => {
 //{name, address, phone, serviceType, email, time, propertyType, bookingDate, bedroom, bathroom, livingRoom, toilet, kitchen, moreInfo, price}
 
  const validatedFields = BookingFormSchema.safeParse({
@@ -58,7 +58,7 @@ export const postBooking = async (formstate:  FormState, formData: FormData) => 
 
 })
 
-revalidatePath('/'); 
+revalidatePath('/admin'); 
 
 return {
   success: 'Booking completed successfully'
