@@ -1,7 +1,7 @@
  "use server"
  import { PrismaClient, Prisma } from '@prisma/client'
 import { BookingFormSchema, FormState} from './lib/utils'
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 
     const prisma = new PrismaClient()
@@ -58,7 +58,8 @@ export const postBooking = async (formstate: FormState, formData: FormData) => {
 
 })
 
-revalidatePath('/'); 
+// revalidatePath('/admin'); 
+revalidateTag('booking')
 
 return {
   success: 'Booking completed successfully'

@@ -1,10 +1,11 @@
 'use server'
 import { PrismaClient } from "@prisma/client"
+import { cache } from 'react'
 
 
 const prisma = new PrismaClient()
 
-export async function getBookingBy(date:any) {
+export const getBookingBy = cache(async(date:any) => {
 
 // let where = {}
 
@@ -41,12 +42,15 @@ export async function getBookingBy(date:any) {
 //   const data = await res.json()
  
   return data 
-};
+});
 
-export async function getAllBooking({search, page, limit}:any) {
+// getAllBooking
+export const getAllBooking = cache(async({search, page}:any) => {
 
-// console.log(search, page, limit)
+  // console.log(search, page)
+ 
 let where = {}
+
 
 if (search) {
      
@@ -64,7 +68,7 @@ if (search) {
      ]     
 }
 
- const LIMIT = 4;
+ const LIMIT = 2;
 const startIndex =(Number(page) - 1) * LIMIT;
 const total = await prisma.booking.count()
 
@@ -80,7 +84,11 @@ const data = await prisma.booking.findMany({
 
 const lastPostInResults = data[data.length -1] 
 const myCursor = lastPostInResults?.id 
+// const tag = searchParams.get('tag')
+//   revalidateTag(tag)
+// console.log(data)
 return { data, myCursor, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total }
-};
+//  { data, myCursor, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total }
+});
 
  {/* @ts-ignore:next-line */}

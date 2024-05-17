@@ -1,8 +1,7 @@
 'use client'
-import { getAllBooking } from '@/app/api/router'
 import React, { useEffect, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import Link from 'next/link';
+import { getAllBooking } from '@/app/api/router';
 
 function Pagination({totalDatas, setTotalDatas}: any) {
 
@@ -12,7 +11,7 @@ function Pagination({totalDatas, setTotalDatas}: any) {
 
      let search = searchParams.get('search')?.toString();
      let page = searchParams.get('page')?.toString() || '';
-     console.log(search)
+     
 
      useEffect(() => {
       const data = getAllBooking({page, search})
@@ -21,9 +20,9 @@ function Pagination({totalDatas, setTotalDatas}: any) {
               page = data.currentPage
          }
         )
+
     }, [ page, search])
 
-    // console.log(totalDatas)
 
      const handleBack = (page:any) => {
   const params = new URLSearchParams(searchParams);

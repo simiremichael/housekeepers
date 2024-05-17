@@ -14,8 +14,9 @@ import Pagination from '@/components/pagination/page'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 
-
+//export const revalidate = 3600
 function page() {
+    
  const dates = new Date();
     const futureDate = dates.getDate();
     dates.setDate(futureDate);
