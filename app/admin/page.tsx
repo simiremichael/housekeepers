@@ -15,7 +15,7 @@ import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 
 //export const revalidate = 3600
-function page() {
+function Admin() {
     
  const dates = new Date();
     const futureDate = dates.getDate();
@@ -236,4 +236,4 @@ function page() {
   )
 }
 
-export default page
+export default Admin
