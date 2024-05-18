@@ -87,7 +87,7 @@ const myCursor = lastPostInResults?.id
 // const tag = searchParams.get('tag')
 //   revalidateTag(tag)
 // console.log(data)
-return { data, myCursor, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total }
+return { data, hasNextPage: startIndex + LIMIT < total, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total}
 //  { data, myCursor, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total }
 });
 

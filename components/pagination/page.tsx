@@ -10,16 +10,19 @@ function Pagination({totalDatas, setTotalDatas}: any) {
   const {replace} = useRouter();
 
      let search = searchParams.get('search')?.toString();
-     let page = searchParams.get('page')?.toString() || '';
+     let page = searchParams.get('page')?.toString() || 1;
      
 
      useEffect(() => {
+        // const allData = () => {
       const data = getAllBooking({page, search})
          data.then((data: any) => {
 ;              setTotalDatas(data?.data)
-              page = data.currentPage
+              page = data?.currentPage
          }
         )
+    // }
+    // allData();
 
     }, [ page, search])
 

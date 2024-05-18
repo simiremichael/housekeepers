@@ -13,6 +13,7 @@ import moment from 'moment'
 import Pagination from '@/components/pagination/page'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
+import PaginationNew from '@/components/paginationNew/page'
 
 //export const revalidate = 3600
 function Admin() {
@@ -24,7 +25,7 @@ function Admin() {
     const [date, setDate] = useState(defaultDate)
     const [datas, setDatas] = useState<any>([])
      const [totalDatas, setTotalDatas] = useState<any>([])
-     const [search, setSearch] = useState('')
+
     
      const searchParams = useSearchParams();
   const pathName = usePathname();
@@ -196,7 +197,7 @@ function Admin() {
     </thead>
     <tbody>
       
-      {totalDatas?.map((item: any) => 
+      {totalDatas?.data?.map((item: any) => 
       <tr className="bg-base-200" key={item?.id}>
         <th>
           <div className="avatar placeholder">
@@ -229,7 +230,8 @@ function Admin() {
     </tbody>
   </table>
 </div>
- <Pagination totalDatas={totalDatas} setTotalDatas={setTotalDatas} />
+ {/* <Pagination totalDatas={totalDatas} setTotalDatas={setTotalDatas} /> */}
+     <PaginationNew totalDatas={totalDatas} setTotalDatas={setTotalDatas} />
      </div>
      </div>
     </div>
