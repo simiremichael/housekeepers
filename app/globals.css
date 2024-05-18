@@ -911,7 +911,7 @@ input {
 }
 .drawer-container-lg {
   background: #0A86B6;
-  height: 100vh;
+  height: 100%;
 }
 .drawer-container-sm {
   background: #0A86B6;

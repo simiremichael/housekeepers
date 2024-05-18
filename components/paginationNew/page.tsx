@@ -45,7 +45,7 @@ function PaginationNew({totalDatas, setTotalDatas}: any) {
      const pages = getPageToShow();
 
   return (
-    <div className="join mt-4">
+    <div className="join mt-4 mb-4">
         <Link href={`?page=${totalDatas.currentPage - 1}`}> 
          <button className='join-item btn' disabled={Number(page) < 2}>Prev</button>
       </Link>

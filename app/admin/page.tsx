@@ -58,7 +58,7 @@ function Admin() {
   <div className="drawer-content">
     <label htmlFor="my-drawer" className="btn  drawer-button"><svg className="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg></label>
   </div> 
-  <div className="drawer-side ">
+  <div className="drawer-side z-50">
     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
     <ul className="menu p-4 w-3/6 min-h-full drawer-container-sm text-base-content">
       <li className='text-white'><Link href=''><Image src={drawer1} className='w-4 mr-2' alt='icon'  />Dashboard</Link></li>
@@ -74,7 +74,7 @@ function Admin() {
     </div>
 </div>
   <div className='drawer-container-lg max-md:hidden pt-3'> 
-      <ul className="menu p-4 min-h-full text-base-content">
+      <ul className="menu p-4 h-full text-base-content">
       <li className='text-white'><Link className='text-white' href=''><Image src={drawer1} className='w-4 mr-2' alt='icon'  />Dashboard</Link></li>
       <li className='text-white'><Link className='text-white' href=''><Image src={drawer2} className='w-4 mr-2' alt='icon'  />Availability</Link></li>
     </ul>
@@ -100,13 +100,15 @@ function Admin() {
      </div>
      <h3 className='font-bold mt-5'>Today Bookings</h3>
      <div className='bookings-container bg-white grid md:grid-cols-3 mt-3'>
-     <input type="date" value={date} onChange={(e:any) => setDate(e.target.value)} className="btn" placeholder="" />
+     <div className='bg-white'>
+     <input type="date"  value={date} onChange={(e:any) => setDate(e.target.value)} className="btn bg-white" placeholder="" />
+     </div>
      <div className='booking-list-container col-span-2'>
    <div className="w-full">
     <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
-    <thead>
+    <thead className='bg-white'>
       <tr>
         <th></th>
         <th>Name</th>
@@ -130,10 +132,9 @@ function Admin() {
         <th>Delete</th>
       </tr>
     </thead>
-    <tbody>
-      
+    <tbody className='z-10'>
       {datas?.map((item: any) => 
-      <tr className="bg-base-200" key={item?.id}>
+      <tr className="bg-white" key={item?.id}>
         <th>
           <div className="avatar placeholder">
            <div className="bg-neutral text-neutral-content rounded-full w-8">
@@ -172,7 +173,7 @@ function Admin() {
  <div className="overflow-x-auto">
   <table className="table  mt-2">
     {/* head */}
-    <thead>
+    <thead className='bg-white'>
       <tr>
         <th></th>
         <th>Name</th>
@@ -196,10 +197,10 @@ function Admin() {
         <th>Delete</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody className='z-10'>
       
       {totalDatas?.data?.map((item: any) => 
-      <tr className="bg-base-200" key={item?.id}>
+      <tr className="bg-white" key={item?.id}>
         <th>
           <div className="avatar placeholder">
            <div className="bg-neutral text-neutral-content rounded-full w-8">
