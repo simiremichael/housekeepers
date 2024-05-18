@@ -158,8 +158,8 @@ function Admin() {
         <td>{item?.location}</td>
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
-        <td><button className='btn'>Edit</button></td>
-        <td><button className='btn'>Delete</button></td>
+        <td><button className='btn text-blue-600'>Edit</button></td>
+        <td><button className='btn text-red-600'>Delete</button></td>
       </tr>
       )}
     </tbody>
@@ -224,8 +224,8 @@ function Admin() {
         <td>{item?.location}</td>
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
-        <td><button className='btn'>Edit</button></td>
-        <td><button className='btn'>Delete</button></td>
+        <td><button className='btn text-blue-600'>Edit</button></td>
+        <td><button className='btn text-red-600'>Delete</button></td>
       </tr>
       )}
     </tbody>

@@ -23,8 +23,6 @@ function PaginationNew({totalDatas, setTotalDatas}: any) {
         )
 
     }, [ page, search])
-
- console.log(totalDatas);
      
      const getPageToShow = () => {
         let startPage = totalDatas?.currentPage - 2;
@@ -45,8 +43,6 @@ function PaginationNew({totalDatas, setTotalDatas}: any) {
      };
 
      const pages = getPageToShow();
-
-     console.log(pages)
 
   return (
     <div className="join mt-4">
