@@ -949,5 +949,5 @@ margin: -8% 0px 0px 20%;
 z-index: 10px;
 }
 .booking-list-container {
-  width: 500px;
+  min-width: 100px;
 }

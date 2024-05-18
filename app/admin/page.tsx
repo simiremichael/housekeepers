@@ -102,14 +102,15 @@ function Admin() {
      <div className='bookings-container bg-white grid md:grid-cols-3 mt-3'>
      <input type="date" value={date} onChange={(e:any) => setDate(e.target.value)} className="btn" placeholder="" />
      <div className='booking-list-container col-span-2'>
-   <div className="overflow-x-auto">
+   <div className="w-full">
+    <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
     <thead>
       <tr>
         <th></th>
         <th>Name</th>
-        <th className='w-20'>Address</th>
+        <th>Address</th>
         <th>Email</th>
         <th>Phone</th>
         <th>Service type</th>
@@ -157,18 +158,18 @@ function Admin() {
         <td>{item?.location}</td>
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
+        <td><button className='btn'>Edit</button></td>
+        <td><button className='btn'>Delete</button></td>
       </tr>
       )}
     </tbody>
   </table>
+  </div>
 </div>
      </div>
      </div>
-
- <div className="overflow-x-auto mt-5">
-    <h3 className='font-bold'>All Bookings</h3>
+<h3 className='font-bold mt-5'>All Bookings</h3>
+ <div className="overflow-x-auto">
   <table className="table  mt-2">
     {/* head */}
     <thead>
@@ -223,8 +224,8 @@ function Admin() {
         <td>{item?.location}</td>
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
+        <td><button className='btn'>Edit</button></td>
+        <td><button className='btn'>Delete</button></td>
       </tr>
       )}
     </tbody>
