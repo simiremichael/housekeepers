@@ -14,10 +14,11 @@ import Pagination from '@/components/pagination/page'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 import PaginationNew from '@/components/paginationNew/page'
+import useSWR from 'swr'
 
 //export const revalidate = 3600
 function Admin() {
-    
+
  const dates = new Date();
     const futureDate = dates.getDate();
     dates.setDate(futureDate);
@@ -25,7 +26,6 @@ function Admin() {
     const [date, setDate] = useState(defaultDate)
     const [datas, setDatas] = useState<any>([])
      const [totalDatas, setTotalDatas] = useState<any>([])
-
     
      const searchParams = useSearchParams();
   const pathName = usePathname();
@@ -37,7 +37,7 @@ function Admin() {
         setDatas(data)
         )
     }, [date])
-
+{/* @ts-ignore:next-line */}
     const handleSearch = useDebouncedCallback((search: string) => {
   const params = new URLSearchParams(searchParams);
   if (search) {
@@ -47,6 +47,7 @@ function Admin() {
   }
   replace(`${pathName}?${params.toString()}`);
 }, 300)
+
 
   return (
     <div className='admin-container relative'>

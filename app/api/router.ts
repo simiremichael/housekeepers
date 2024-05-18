@@ -1,11 +1,11 @@
 'use server'
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from "@prisma/client";
 import { cache } from 'react'
 
 
 const prisma = new PrismaClient()
 
-export const getBookingBy = cache(async(date:any) => {
+export const getBookingBy = cache(async(date:any,) => {
 
 // let where = {}
 
@@ -32,7 +32,7 @@ export const getBookingBy = cache(async(date:any) => {
 
     const data = await prisma.booking.findMany({
       where: {
-        bookingDate: date
+        bookingDate: date?.toString()
       },
 
      orderBy: {
@@ -87,6 +87,7 @@ const myCursor = lastPostInResults?.id
 // const tag = searchParams.get('tag')
 //   revalidateTag(tag)
 // console.log(data)
+ 
 return { data, hasNextPage: startIndex + LIMIT < total, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total}
 //  { data, myCursor, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total }
 });

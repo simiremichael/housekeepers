@@ -59,7 +59,7 @@ export const postBooking = async (formstate: FormState, formData: FormData) => {
 })
 
 // revalidatePath('/admin'); 
-revalidateTag('booking')
+revalidatePath('/admin')
 
 return {
   success: 'Booking completed successfully'
