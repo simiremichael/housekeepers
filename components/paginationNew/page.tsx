@@ -43,11 +43,12 @@ function PaginationNew({totalDatas, setTotalDatas}: any) {
      };
 
      const pages = getPageToShow();
+    
 
   return (
     <div className="join mt-4 mb-4">
-        <Link href={`?page=${totalDatas.currentPage - 1}`}> 
-         <button className='join-item btn' disabled={Number(page) < 2}>Prev</button>
+        <Link href={`?page=${totalDatas.length > 0 ? totalDatas.currentPage - 1 : 1}`}>  
+         <button className='join-item btn' disabled={Number(page) <= 1}>Prev</button>
       </Link>
         { pages?.map((p, i) => (
        <Link key={p} href={`?page=${p}`}> 
@@ -56,8 +57,8 @@ function PaginationNew({totalDatas, setTotalDatas}: any) {
       {/* <button className='btn'>{p}</button> */}
       </Link>
       ))}
-      <Link href={`?page=${totalDatas.currentPage + 1}`}> 
-         <button className='join-item btn'>Next</button>
+      <Link href={`?page=${totalDatas.length < 1 ? 1 : totalDatas.currentPage + 1}`} > 
+         <button className='join-item btn' disabled={totalDatas.length < 1}>Next</button>
       </Link>
     </div>
   )
