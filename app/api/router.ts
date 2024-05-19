@@ -1,11 +1,29 @@
 'use server'
 import { PrismaClient } from "@prisma/client";
+import { NextRequest, NextResponse } from "next/server";
 import { cache } from 'react'
 
 
 const prisma = new PrismaClient()
 
-export const getBookingBy = cache(async(date:any,) => {
+// export const GET = cache(async(request: NextRequest) => {
+
+//   // const date = request.nextUrl.searchParams.get('date')
+//   // console.log(date, request)
+
+//     const data = await prisma.booking.findMany()
+// //   const data = await res.json()
+
+// if (!data) throw new Error('No data found!')
+ 
+//   return data
+// });
+
+// getBookingBy
+export const getBookingBy = cache(async(date: any) => {
+
+  // const date = request.nextUrl.searchParams.get('date')
+  // console.log(date, request)
 
 // let where = {}
 
@@ -29,7 +47,6 @@ export const getBookingBy = cache(async(date:any,) => {
 //      ]     
 // }
 
-
     const data = await prisma.booking.findMany({
       where: {
         bookingDate: date?.toString()
@@ -40,8 +57,10 @@ export const getBookingBy = cache(async(date:any,) => {
   },
 })
 //   const data = await res.json()
+if (!data) throw new Error('No data found!')
  
   return data 
+
 });
 
 // getAllBooking
@@ -71,7 +90,7 @@ if (search) {
  const LIMIT = 2;
 const startIndex =(Number(page) - 1) * LIMIT;
 const total = await prisma.booking.count()
-
+const revenue = await prisma.booking.findMany({select: {price: true}})
 const data = await prisma.booking.findMany({
    skip: startIndex, 
    take: LIMIT,
@@ -88,7 +107,7 @@ const myCursor = lastPostInResults?.id
 //   revalidateTag(tag)
 // console.log(data)
  
-return { data, hasNextPage: startIndex + LIMIT < total, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total}
+return { data, hasNextPage: startIndex + LIMIT < total, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total, revenue: revenue}
 //  { data, myCursor, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total }
 });
 
