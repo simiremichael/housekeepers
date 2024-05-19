@@ -57,7 +57,8 @@ function Admin() {
 }, 300)
 
 // const { data, error } = useSWR(`/api?date=${date}`, fetcher)
-const filterdRevenue = totalDatas?.revenue?.filter((r: any) => r.price !== 'Custom price').map((t:any) => t.price)?.reduce((a: any, b:any) => Number(a) + Number(b), 0)
+const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Custom price').map((t:any) => t?.price);
+ const filterdRevenue = filterRevenue?.reduce((a: any, b:any) => Number(a) + Number(b), 0)
 // console.log(filterdRevenue)
   return (
     <div className='admin-container relative'>
