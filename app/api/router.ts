@@ -90,7 +90,11 @@ if (search) {
  const LIMIT = 2;
 const startIndex =(Number(page) - 1) * LIMIT;
 const total = await prisma.booking.count();
-const revenue = await prisma.booking.findMany({select: {price: true}});
+const revenue = await prisma.booking.findMany({
+  where: {},
+  select: {price: true}
+  
+});
 const data = await prisma.booking.findMany({
    skip: startIndex, 
    take: LIMIT,
