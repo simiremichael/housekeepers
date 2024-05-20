@@ -20,7 +20,7 @@ const prisma = new PrismaClient()
 // });
 
 // getBookingBy
-export const getBookingBy = cache(async(date: any) => {
+export const getBookingBy = async(date: any) => {
 
   // const date = request.nextUrl.searchParams.get('date')
   // console.log(date, request)
@@ -61,7 +61,7 @@ if (!data) throw new Error('No data found!')
  
   return data 
 
-});
+};
 
 // getAllBooking
 export const getAllBooking = cache(async({search, page}:any) => {
@@ -87,8 +87,9 @@ if (search) {
      ]     
 }
 
+
  const LIMIT = 2;
-const startIndex =(Number(page) - 1) * LIMIT;
+const startIndex = (Number(page) - 1) * LIMIT;
 const total = await prisma.booking.count();
 const revenue = await prisma.booking.findMany({
   where: {},
@@ -105,14 +106,55 @@ const data = await prisma.booking.findMany({
     }
 })
 
-const lastPostInResults = data[data.length -1] 
-const myCursor = lastPostInResults?.id 
+// const lastPostInResults = data[data.length -1] 
+// const myCursor = lastPostInResults?.id 
 // const tag = searchParams.get('tag')
 //   revalidateTag(tag)
 // console.log(data)
+
+if (data.length < 1) throw new Error('No data found!')
+
+  if (data.length < 1) return
  
 return { data, hasNextPage: startIndex + LIMIT < total, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total, revenue: revenue}
 //  { data, myCursor, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total }
 });
 
  {/* @ts-ignore:next-line */}
+
+ export const postBookings = async (request:any) => {
+const {livingRoom, bedroom, state, location, bathroom, toilet, serviceType, price, time, bookingDate, kitchen, name, email, phone, address, moreInfo} = request
+
+ await prisma.booking.create({
+  data: {
+    name,
+    address,
+    email,
+    time,
+    phone, 
+    state,
+    location,
+    serviceType, 
+    bookingDate, 
+    bedroom, 
+    bathroom, 
+    livingRoom, 
+    toilet, 
+    kitchen, 
+    moreInfo, 
+    price
+  }
+
+})
+ }
+
+ export const deletBookin = async(id: number) => {
+
+  console.log(id)
+
+ await prisma.booking.delete({
+  where: {
+    id: id,
+  },
+})
+ }

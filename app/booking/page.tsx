@@ -3,9 +3,21 @@ import React, { useEffect, useState } from 'react'
 import { postBooking } from '@/app/action';
 import { useFormState } from 'react-dom';
 import { useRouter } from 'next/navigation'
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { postBookings } from '../api/router';
 
 
 function page() {
+
+  const queryClient = useQueryClient()
+
+  // const mutation = useMutation({
+  //   mutationFn: postBooking,
+  //   onSuccess: () => {
+  //     // Invalidate and refetch
+  //     queryClient.invalidateQueries({ queryKey: ['bookings'] })
+  //   },
+  // })
   
      const router = useRouter()
 
@@ -14,7 +26,7 @@ function page() {
     dates.setDate(futureDate);
     const defaultDate = dates.toLocaleDateString('en-CA');
 
-const [price, setPrice ] = useState({livingRoom: '', bedroom: '', states: '', location: '', batheroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: '', name: '', email: '', phone: '', address: '', moreInfo: '' })
+const [price, setPrice ] = useState({livingRoom: '', bedroom: '', state: '', location: '', bathroom: '', toilet: '', serviceType: '', price: '', time: '', bookingDate: '', kitchen: '', name: '', email: '', phone: '', address: '', moreInfo: '' })
  let livingroomPrice = 5000
  let roomPrice = 3000
  let toiletPrice = 1000
@@ -25,16 +37,16 @@ const [price, setPrice ] = useState({livingRoom: '', bedroom: '', states: '', lo
  let livingRoomFumigationPrice = 10000
 
 
-  const [ state, formAction] = useFormState(postBooking, undefined)
+  //const [ state, formAction] = useFormState(postBooking, undefined)
 
-useEffect(() => {
- if (state?.success) {
-    router.push('/')
- }
-},[state?.success]);
+// useEffect(() => {
+//  if (state?.success) {
+//     router.push('/')
+//  }
+// },[state?.success]);
 
 const totalFumgatonPrice = roomFumigationPrice * Number(price.bedroom) + livingRoomFumigationPrice * Number(price.livingRoom) + 10000
-    const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.batheroom) + toiletPrice * Number(price.toilet) + kitchenPrice * Number(price.kitchen) + 5000
+    const totalPrice = livingroomPrice * Number(price.livingRoom) + roomPrice * Number(price.bedroom) + bathroomPrice * Number(price.bathroom) + toiletPrice * Number(price.toilet) + kitchenPrice * Number(price.kitchen) + 5000
 
 useEffect(() => {
 if(price.serviceType === 'Residential Fumigation') {
@@ -56,15 +68,30 @@ if(price.serviceType === 'Post Construction Cleaning') {
     setFinalPrice('Custom price')
 }
 
-},[price.batheroom,price.bedroom, price.serviceType, price.bookingDate, price.livingRoom, price.toilet, price.price, finalPrice, price.kitchen])
+},[price.bathroom, price.bedroom, price.serviceType, price.bookingDate, price.livingRoom, price.toilet, price.price, finalPrice, price.kitchen])
 
+const mutation = useMutation({
+    mutationFn: postBookings,
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ['bookings'] })
+      router.push('/')
+    },
+    onError: (error) => {
+      console.log(error)
+    }
+  })
+
+const handleSubmit = () => {
+          mutation.mutate(price)
+}
 
   return (
     <div className='booking-container'>
         <div className='booking-inner-container'>
     <button onClick={() => router.back()} className='btn'>back</button>
       <h1 className='text-center font-bold'>Booking</h1>
-      <form action={formAction}>
+      <form action={handleSubmit}>
       <div className='date-time-container grid md:grid-cols-3 gap-4 mt-5 mb-5'>
      <div className=''>
         <p className='mb-4'>Choose a date</p>
@@ -103,7 +130,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     </div>
     <div className='group-input'>
      <label className='other-input-label'>State</label>
-     <select name='state' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, states: e.target.value})} required>
+     <select name='state' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, state: e.target.value})} required>
   <option className='text-gray-400' defaultValue=''>State</option>
   <option defaultValue=''>STATE</option>
       <option>Lagos</option>
@@ -153,7 +180,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     { price.serviceType === 'Residential Fumigation' || price.serviceType === 'Residential Cleaning' ?
     <div className='group-input'>
      <label className='other-input-label'>Bathroom</label>
-     <select name='bathroom' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, batheroom: e.target.value})}>
+     <select name='bathroom' className="select select-bordered w-full" onChange={(e:any) => setPrice({...price, bathroom: e.target.value})}>
   <option className='text-gray-400' defaultValue=''>Bathroom</option>
   <option>1</option>
   <option>2</option>
@@ -223,7 +250,7 @@ if(price.serviceType === 'Post Construction Cleaning') {
     </div>
     <div className='group-input mt-5'>
      <label className='other-input-label border-2 p-2 font-bold mt-4  bg-slate-600 text-white'>Price: <span className='ml-4 text-white'>{finalPrice !== 'Custom price'? 'NGN' : ''} {finalPrice}</span></label>
-     <input type='text' name='price' value={finalPrice} placeholder="price" className="input input-bordered w-full hidden" onChange={(e:any) => setPrice({...price, price: e.target.value})}  />
+     <input type='text' name='price' value={finalPrice} placeholder="price" className="input input-bordered w-full hidden" onChange={() => setPrice({...price, price: finalPrice})}  />
     </div>
     {finalPrice === 'Custom price' &&
       <h5 className='text-xs text-blue-800 mt-5'>Please note that we need to carry out inspection to determine the price.</h5>
@@ -231,13 +258,13 @@ if(price.serviceType === 'Post Construction Cleaning') {
     <button type='submit' className='btn mt-5'>Submit</button>
     </form>
     </div>
-    {state?.success &&
+    {/* {state?.success &&
     <div className="toast toast-top toast-end">
   <div className="alert alert-success"> 
     <span style={{color: '#ffffff'}}>{state?.success}</span>
   </div>
 </div>
-}
+} */}
 {/* {state?.errors &&
 <div role="alert" className="alert alert-error">
   <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>

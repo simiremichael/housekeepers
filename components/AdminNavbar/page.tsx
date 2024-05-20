@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 
-function AdminNavbar() {
+function AdminNavbar(setSearch:any) {
 
   const searchParams = useSearchParams();
   const pathName = usePathname();
@@ -17,6 +17,7 @@ function AdminNavbar() {
     const defaultDate = dates.toLocaleDateString('en-CA');
 
 const handleSearch = useDebouncedCallback((search: string) => {
+  setSearch(search)
   const params = new URLSearchParams(searchParams);
   if (search) {
     params.set('search', search);

@@ -8,7 +8,7 @@ import drawer2 from '../../public/drawer-icon2.png'
 import cardIcon1 from '../../public/admin-card-icon1.png'
 import cardIcon2 from '../../public/admin-card-icon2.png'
 import cardIcon3 from '../../public/admin-card-icon3.png' 
-import {getBookingBy} from '../api/router'
+import {getBookingBy, deletBookin} from '../api/router'
 import moment from 'moment'
 import Pagination from '@/components/pagination/page'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
@@ -16,6 +16,7 @@ import { useDebouncedCallback } from 'use-debounce'
 import PaginationNew from '@/components/paginationNew/page'
 import useSWR from 'swr'
 import { error } from 'console'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 
 //export const revalidate = 3600
 function Admin() {
@@ -33,18 +34,26 @@ function Admin() {
     const [date, setDate] = useState(defaultDate)
     const [datas, setDatas] = useState<any>([])
      const [totalDatas, setTotalDatas] = useState<any>([])
-    
+     const [isLoading, setIsLoading] = useState(false)
+     const router = useRouter()
      const searchParams = useSearchParams();
   const pathName = usePathname();
   const {replace} = useRouter();
 
-    useEffect(() => {
-      const data = getBookingBy(date)
-         data.then((data) => 
-           // console.log(data)
-           setDatas(data)
-        ).then((error) => console.log(error))
-    }, [date])
+  const [page, setPage] = useState(1)
+  const [search, setSearch] = useState('')
+
+  const querys = useQuery({ queryKey: ['bookings', page, search], queryFn: () => getBookingBy(date)})
+  
+   const { data, isLoading: isLoadings, isSuccess, error} = querys
+
+    // useEffect(() => {
+    //   const data = getBookingBy(date)
+    //      data.then((data) => 
+    //        // console.log(data)
+    //        setDatas(data)
+    //     ).then((error) => console.log(error))
+    // }, [date])
 {/* @ts-ignore:next-line */}
     const handleSearch = useDebouncedCallback((search: string) => {
   const params = new URLSearchParams(searchParams);
@@ -60,9 +69,27 @@ function Admin() {
 const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Custom price').map((t:any) => t?.price);
  const filterdRevenue = filterRevenue?.reduce((a: any, b:any) => Number(a) + Number(b), 0)
 // console.log(filterdRevenue)
+ const queryClient = useQueryClient()
+
+ const mutation = useMutation({
+    mutationFn: deletBookin,
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ['bookings'] })
+      // router.push('/admin')
+    },
+    onError: (error) => {
+      console.log(error)
+    }
+  })
+const handleDelete = (id:any) => {
+   mutation.mutate(id)
+
+}
+
   return (
     <div className='admin-container relative'>
-        <AdminNavbar />
+        <AdminNavbar setSearch={setSearch} />
         <div className='admin-body-container md:grid md:grid-cols-6'>
             <div className='flex items-center drawer-search-container max-md:mt-3 md:hidden'>
             <div className="drawer md:hidden w-2/6">
@@ -144,8 +171,11 @@ const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Cust
         <th>Delete</th>
       </tr>
     </thead>
+    
     <tbody className='z-10'>
-      {datas?.map((item: any) => 
+      {isLoading ? <p>LOADING..............</p> :
+      <>
+      {data?.map((item: any) => 
       <tr className="bg-white" key={item?.id}>
         <th>
           <div className="avatar placeholder">
@@ -172,9 +202,11 @@ const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Cust
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
         <td><button className='btn text-blue-600'>Edit</button></td>
-        <td><button className='btn text-red-600'>Delete</button></td>
+        <td><button className='btn text-red-600' onClick={() => handleDelete(item?.id)}>Delete</button></td>
       </tr>
       )}
+       </>
+    }
     </tbody>
   </table>
   </div>
@@ -210,7 +242,8 @@ const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Cust
       </tr>
     </thead>
     <tbody className='z-10'>
-      
+       {isLoading ? <p className='text-black'>LOADING..............</p> :
+      <>
       {totalDatas?.data?.map((item: any) => 
       <tr className="bg-white" key={item?.id}>
         <th>
@@ -238,14 +271,16 @@ const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Cust
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
         <td><button className='btn text-blue-600'>Edit</button></td>
-        <td><button className='btn text-red-600'>Delete</button></td>
+        <td><button className='btn text-red-600' onClick={() => handleDelete(item?.id)}>Delete</button></td>
       </tr>
       )}
+      </>
+       }
     </tbody>
   </table>
 </div>
  {/* <Pagination totalDatas={totalDatas} setTotalDatas={setTotalDatas} /> */}
-     <PaginationNew totalDatas={totalDatas} setTotalDatas={setTotalDatas} />
+     <PaginationNew setIsLoading={setIsLoading} totalDatas={totalDatas} setTotalDatas={setTotalDatas} page={page} setPage={setPage} searc={search} />
      </div>
      </div>
     </div>
