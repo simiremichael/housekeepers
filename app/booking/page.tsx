@@ -5,6 +5,7 @@ import { useFormState } from 'react-dom';
 import { useRouter } from 'next/navigation'
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { postBookings } from '../api/router';
+import BookingDetails from '@/components/bookingDetails/page';
 
 
 function page() {
@@ -76,6 +77,13 @@ const mutation = useMutation({
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ['bookings'] })
       router.push('/')
+      {
+      <div className="toast toast-top toast-end">
+  <div className="alert alert-success"> 
+    <span style={{color: '#ffffff'}}>Booking Successfully</span>
+  </div>
+</div>
+      }
     },
     onError: (error) => {
       console.log(error)

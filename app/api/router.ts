@@ -148,6 +148,17 @@ const {livingRoom, bedroom, state, location, bathroom, toilet, serviceType, pric
 })
  }
 
+ export const updateBooking = async(id: number) => {
+
+ const data = await prisma.booking.findUnique({
+  where: {
+    id: id
+  }
+})
+
+  return data;
+ }
+
  export const deletBookin = async(id: number) => {
 
   console.log(id)
@@ -155,6 +166,7 @@ const {livingRoom, bedroom, state, location, bathroom, toilet, serviceType, pric
  await prisma.booking.delete({
   where: {
     id: id,
-  },
+  }
 })
+
  }

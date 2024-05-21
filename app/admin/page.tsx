@@ -14,9 +14,9 @@ import Pagination from '@/components/pagination/page'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 import PaginationNew from '@/components/paginationNew/page'
-import useSWR from 'swr'
-import { error } from 'console'
+
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import BookingDetails from '@/components/bookingDetails/page'
 
 //export const revalidate = 3600
 function Admin() {
@@ -39,11 +39,12 @@ function Admin() {
      const searchParams = useSearchParams();
   const pathName = usePathname();
   const {replace} = useRouter();
+  const [id, setId] = useState(0)
 
   const [page, setPage] = useState(1)
   const [search, setSearch] = useState('')
 
-  const querys = useQuery({ queryKey: ['bookings', page, search], queryFn: () => getBookingBy(date)})
+  const querys = useQuery({ queryKey: ['bookings', date], queryFn: () => getBookingBy(date)})
   
    const { data, isLoading: isLoadings, isSuccess, error} = querys
 
@@ -179,8 +180,10 @@ const handleDelete = (id:any) => {
       <tr className="bg-white" key={item?.id}>
         <th>
           <div className="avatar placeholder">
-           <div className="bg-neutral text-neutral-content rounded-full w-8">
-            <span className="text-xs">{item?.name.slice(0,1).toUpperCase()}</span>
+           <div className="bg-neutral text-neutral-content rounded-full w-10">
+            {/* @ts-ignore:next-line */}
+            <td><button className='btn btn-circle text-xs text-green-800'  onClick={()=> {document.getElementById('my_modal_3').showModal(), setId(item?.id) }}>View</button></td>
+            {/* <span className="text-xs">{item?.name.slice(0,1).toUpperCase()}</span> */}
            </div>
           </div>
         </th>
@@ -248,8 +251,10 @@ const handleDelete = (id:any) => {
       <tr className="bg-white" key={item?.id}>
         <th>
           <div className="avatar placeholder">
-           <div className="bg-neutral text-neutral-content rounded-full w-8">
-            <span className="text-xs">{item?.name.slice(0,1).toUpperCase()}</span>
+           <div className="bg-neutral text-neutral-content rounded-full w-10">
+            {/* @ts-ignore:next-line */}
+            <td><button className='btn btn-circle text-xs text-green-800' onClick={()=> {document.getElementById('my_modal_3').showModal(), setId(item?.id) }}>View</button></td>
+            {/* <span className="text-xs">{item?.name.slice(0,1).toUpperCase()}</span> */}
            </div>
           </div>
         </th>
@@ -270,6 +275,7 @@ const handleDelete = (id:any) => {
         <td>{item?.location}</td>
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
+        {/* @ts-ignore:next-line */}
         <td><button className='btn text-blue-600'>Edit</button></td>
         <td><button className='btn text-red-600' onClick={() => handleDelete(item?.id)}>Delete</button></td>
       </tr>
@@ -278,9 +284,10 @@ const handleDelete = (id:any) => {
        }
     </tbody>
   </table>
+  <BookingDetails id={id} />
 </div>
  {/* <Pagination totalDatas={totalDatas} setTotalDatas={setTotalDatas} /> */}
-     <PaginationNew setIsLoading={setIsLoading} totalDatas={totalDatas} setTotalDatas={setTotalDatas} page={page} setPage={setPage} searc={search} />
+     <PaginationNew setIsLoading={setIsLoading} totalDatas={totalDatas} setTotalDatas={setTotalDatas} page={page} setPage={setPage} search={search} />
      </div>
      </div>
     </div>
