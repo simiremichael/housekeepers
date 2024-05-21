@@ -110,9 +110,9 @@ const data = await prisma.booking.findMany({
 // const myCursor = lastPostInResults?.id 
 // const tag = searchParams.get('tag')
 //   revalidateTag(tag)
-// console.log(data)
 
-if (data.length < 1) throw new Error('No data found!')
+
+// if (data.length < 1 || data === null || data === undefined) throw new Error('No data found!')
 
   if (data.length < 1) return
  

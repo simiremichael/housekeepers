@@ -48,6 +48,8 @@ function Admin() {
   
    const { data, isLoading: isLoadings, isSuccess, error} = querys
 
+   console.log(error)
+
     // useEffect(() => {
     //   const data = getBookingBy(date)
     //      data.then((data) => 
@@ -57,13 +59,14 @@ function Admin() {
     // }, [date])
 {/* @ts-ignore:next-line */}
     const handleSearch = useDebouncedCallback((search: string) => {
-  const params = new URLSearchParams(searchParams);
-  if (search) {
-    params.set('search', search);
-  } else {
-    params.delete('search');
-  }
-  replace(`${pathName}?${params.toString()}`);
+      setSearch(search);
+  // const params = new URLSearchParams(searchParams);
+  // if (search) {
+  //   params.set('search', search);
+  // } else {
+  //   params.delete('search');
+  // }
+  // replace(`${pathName}?${params.toString()}`);
 }, 300)
 
 // const { data, error } = useSWR(`/api?date=${date}`, fetcher)
@@ -90,7 +93,7 @@ const handleDelete = (id:any) => {
 
   return (
     <div className='admin-container relative'>
-        <AdminNavbar setSearch={setSearch} />
+        <AdminNavbar setSearch={setSearch} search={search} />
         <div className='admin-body-container md:grid md:grid-cols-6'>
             <div className='flex items-center drawer-search-container max-md:mt-3 md:hidden'>
             <div className="drawer md:hidden w-2/6">
@@ -109,7 +112,7 @@ const handleDelete = (id:any) => {
  <div className='search-m-container md:hidden w-full'>
      <label className="input input-bordered flex items-center gap-2 bg-white">
       <svg width={12} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-     <input type="text" className="grow" placeholder="Search" defaultValue={searchParams.get('search')?.toString()} onChange={(e) => {handleSearch(e.target.value)}} />
+     <input type="text" className="grow" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
      </label>
     </div>
 </div>
@@ -174,7 +177,7 @@ const handleDelete = (id:any) => {
     </thead>
     
     <tbody className='z-10'>
-      {isLoading ? <p>LOADING..............</p> :
+      {isLoading ? <div className='mt-10 mb-10 w-full flex items-center justify-center'><span className="loading loadin-icon loading-dots loading-mg text-center"></span></div> :
       <>
       {data?.map((item: any) => 
       <tr className="bg-white" key={item?.id}>
@@ -245,7 +248,7 @@ const handleDelete = (id:any) => {
       </tr>
     </thead>
     <tbody className='z-10'>
-       {isLoading ? <p className='text-black'>LOADING..............</p> :
+       {isLoading ? <div className='mt-10 mb-10 w-full flex items-center justify-center'><span className="loading loadin-icon loading-dots loading-mg text-center"></span></div> :
       <>
       {totalDatas?.data?.map((item: any) => 
       <tr className="bg-white" key={item?.id}>
