@@ -88,7 +88,7 @@ const handleDelete = (id:any) => {
    mutation.mutate(id)
 
 }
-console.log(totalDatas, error)
+// console.log(totalDatas, error)
   return (
     <div className='admin-container relative'>
         <AdminNavbar setSearch={setSearch} search={search} />
