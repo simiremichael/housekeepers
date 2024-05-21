@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 
-function AdminNavbar(setSearch:any, search: any) {
+function AdminNavbar({setSearch, search}: any) {
 
   const searchParams = useSearchParams();
   const pathName = usePathname();

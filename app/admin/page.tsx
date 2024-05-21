@@ -48,8 +48,6 @@ function Admin() {
   
    const { data, isLoading: isLoadings, isSuccess, error} = querys
 
-   console.log(error)
-
     // useEffect(() => {
     //   const data = getBookingBy(date)
     //      data.then((data) => 
@@ -58,8 +56,8 @@ function Admin() {
     //     ).then((error) => console.log(error))
     // }, [date])
 {/* @ts-ignore:next-line */}
-    const handleSearch = useDebouncedCallback((search: string) => {
-      setSearch(search);
+    // const handleSearch = useDebouncedCallback((search: string) => {
+    //   setSearch(search);
   // const params = new URLSearchParams(searchParams);
   // if (search) {
   //   params.set('search', search);
@@ -67,7 +65,7 @@ function Admin() {
   //   params.delete('search');
   // }
   // replace(`${pathName}?${params.toString()}`);
-}, 300)
+// }, 300)
 
 // const { data, error } = useSWR(`/api?date=${date}`, fetcher)
 const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Custom price').map((t:any) => t?.price);
@@ -90,7 +88,7 @@ const handleDelete = (id:any) => {
    mutation.mutate(id)
 
 }
-
+console.log(totalDatas, error)
   return (
     <div className='admin-container relative'>
         <AdminNavbar setSearch={setSearch} search={search} />
@@ -177,7 +175,7 @@ const handleDelete = (id:any) => {
     </thead>
     
     <tbody className='z-10'>
-      {isLoading ? <div className='mt-10 mb-10 w-full flex items-center justify-center'><span className="loading loadin-icon loading-dots loading-mg text-center"></span></div> :
+      {isLoadings ? <tr><td><div className='mt-10 mb-10 w-full flex items-center justify-center'><span className="loading loadin-icon loading-dots loading-mg text-center"></span></div></td></tr> :
       <>
       {data?.map((item: any) => 
       <tr className="bg-white" key={item?.id}>
@@ -248,7 +246,7 @@ const handleDelete = (id:any) => {
       </tr>
     </thead>
     <tbody className='z-10'>
-       {isLoading ? <div className='mt-10 mb-10 w-full flex items-center justify-center'><span className="loading loadin-icon loading-dots loading-mg text-center"></span></div> :
+       {isLoading ? <tr><td><div className='mt-10 mb-10 w-full flex items-center justify-center'><span className="loading loadin-icon loading-dots loading-mg text-center"></span></div></td></tr> :
       <>
       {totalDatas?.data?.map((item: any) => 
       <tr className="bg-white" key={item?.id}>

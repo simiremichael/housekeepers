@@ -90,7 +90,7 @@ if (search) {
 
  const LIMIT = 2;
 const startIndex = (Number(page) - 1) * LIMIT;
-const total = await prisma.booking.count();
+const total = await prisma.booking.count({where});
 const revenue = await prisma.booking.findMany({
   where: {},
   select: {price: true}
@@ -112,11 +112,10 @@ const data = await prisma.booking.findMany({
 //   revalidateTag(tag)
 
 
-// if (data.length < 1 || data === null || data === undefined) throw new Error('No data found!')
+ if (data.length < 1 || data === null || data === undefined) throw new Error('No data found!')
 
   if (data.length < 1) return
- 
-return { data, hasNextPage: startIndex + LIMIT < total, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total, revenue: revenue}
+ return { data, hasNextPage: startIndex + LIMIT < total, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total, revenue: revenue}
 //  { data, myCursor, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT), total }
 });
 
