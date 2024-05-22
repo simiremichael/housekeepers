@@ -1,11 +1,11 @@
 'use client'
-import { updateBooking } from '@/app/api/router'
+import { getBooking } from '@/app/api/router'
 import { useQuery } from '@tanstack/react-query'
 import React, { useEffect } from 'react'
 
 function BookingDetails(id:any) {
 
-     const querys = useQuery({ queryKey: ['bookings', id], queryFn: () => updateBooking(id?.id)})
+     const querys = useQuery({ queryKey: ['bookings', id], queryFn: () => getBooking(id?.id)})
 
    const { data, isLoading, isSuccess, error} = querys
 

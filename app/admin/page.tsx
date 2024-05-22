@@ -8,7 +8,7 @@ import drawer2 from '../../public/drawer-icon2.png'
 import cardIcon1 from '../../public/admin-card-icon1.png'
 import cardIcon2 from '../../public/admin-card-icon2.png'
 import cardIcon3 from '../../public/admin-card-icon3.png' 
-import {getBookingBy, deletBookin} from '../api/router'
+import {getBookingBy, deletBooking} from '../api/router'
 import moment from 'moment'
 import Pagination from '@/components/pagination/page'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
@@ -17,6 +17,7 @@ import PaginationNew from '@/components/paginationNew/page'
 
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import BookingDetails from '@/components/bookingDetails/page'
+import EditBooking from '@/components/editBooking/page'
 
 //export const revalidate = 3600
 function Admin() {
@@ -74,7 +75,7 @@ const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Cust
  const queryClient = useQueryClient()
 
  const mutation = useMutation({
-    mutationFn: deletBookin,
+    mutationFn: deletBooking,
     onSuccess: () => {
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ['bookings'] })
@@ -205,7 +206,8 @@ const handleDelete = (id:any) => {
         <td>{item?.location}</td>
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
-        <td><button className='btn text-blue-600'>Edit</button></td>
+         {/* @ts-ignore:next-line */}
+        <td><button className='btn text-blue-600' onClick={()=> {document.getElementById('my_modal_1').showModal(), setId(item?.id) }}>Edit</button></td>
         <td><button className='btn text-red-600' onClick={() => handleDelete(item?.id)}>Delete</button></td>
       </tr>
       )}
@@ -277,7 +279,7 @@ const handleDelete = (id:any) => {
         <td>{item?.state}</td>
         <td>{moment().fromNow(item?.createdAt)}</td>
         {/* @ts-ignore:next-line */}
-        <td><button className='btn text-blue-600'>Edit</button></td>
+        <td><button className='btn text-blue-600' onClick={()=> {document.getElementById('my_modal_1').showModal(), setId(item?.id) }}>Edit</button></td>
         <td><button className='btn text-red-600' onClick={() => handleDelete(item?.id)}>Delete</button></td>
       </tr>
       )}
@@ -286,6 +288,7 @@ const handleDelete = (id:any) => {
     </tbody>
   </table>
   <BookingDetails id={id} />
+  <EditBooking id={id} />
 </div>
  {/* <Pagination totalDatas={totalDatas} setTotalDatas={setTotalDatas} /> */}
      <PaginationNew setIsLoading={setIsLoading} totalDatas={totalDatas} setTotalDatas={setTotalDatas} page={page} setPage={setPage} search={search} />
