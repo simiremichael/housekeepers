@@ -7,7 +7,7 @@ import { number } from 'zod';
 import Toast from 'awesome-toast-component'
 
 
-function EditBooking(id:any) {
+function EditBooking(id:any, EditMutation: any) {
 
   const queryClient = useQueryClient()
   
@@ -75,7 +75,7 @@ const mutation = useMutation({
     }
   })
 
-const handleSubmit = () => {
+const handleEdit = () => {
           mutation.mutate(price)
 }
 
@@ -88,7 +88,7 @@ const handleSubmit = () => {
         <button className="btn">Close</button>
         </form>
       <h1 className='text-center font-bold'>Edit Booking</h1>
-      <form action={handleSubmit}>
+      <form action={handleEdit}>
       <div className='date-time-container grid md:grid-cols-3 gap-4 mt-5 mb-5'>
      <div className=''>
         <p className='mb-4'>Choose a date</p>

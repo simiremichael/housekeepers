@@ -8,7 +8,7 @@ import drawer2 from '../../public/drawer-icon2.png'
 import cardIcon1 from '../../public/admin-card-icon1.png'
 import cardIcon2 from '../../public/admin-card-icon2.png'
 import cardIcon3 from '../../public/admin-card-icon3.png' 
-import {getBookingBy, deletBooking} from '../api/router'
+import {getBookingBy, deletBooking, updateBooking} from '../api/router'
 import moment from 'moment'
 import Pagination from '@/components/pagination/page'
 import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
@@ -90,7 +90,7 @@ const handleDelete = (id:any) => {
    mutation.mutate(id)
 
 }
-// console.log(totalDatas, error)
+
   return (
     <div className='admin-container relative'>
         <AdminNavbar setSearch={setSearch} search={search} />
