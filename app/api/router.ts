@@ -189,7 +189,7 @@ const {livingRoom, bedroom, state, location, bathroom, toilet, serviceType, pric
 
  export const deletBooking = async(id: number) => {
 
-  console.log(id)
+  // console.log(id)
 
  await prisma.booking.delete({
   where: {

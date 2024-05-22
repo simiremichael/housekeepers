@@ -67,7 +67,7 @@ const mutation = useMutation({
     onSuccess: () => {
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ['bookings'] })
-      router.push('/admin')
+    //   router.push('/admin')
       alert('Bookings updated successfully')
     },
     onError: (error) => {
