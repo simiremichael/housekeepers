@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { postBookings } from '../api/router';
 import BookingDetails from '@/components/bookingDetails/page';
+import Toast from 'awesome-toast-component';
 
 
 function page() {
@@ -77,6 +78,7 @@ const mutation = useMutation({
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ['bookings'] })
       router.push('/')
+       new Toast('Booking successful', {position: 'top'})
       {
       <div className="toast toast-top toast-end">
   <div className="alert alert-success"> 

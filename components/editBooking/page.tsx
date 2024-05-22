@@ -4,7 +4,7 @@ import { getBooking, updateBooking } from '@/app/api/router';
 import { useRouter } from 'next/navigation'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { number } from 'zod';
-import { truncateSync } from 'fs';
+import Toast from 'awesome-toast-component'
 
 
 function EditBooking(id:any) {
@@ -68,7 +68,7 @@ const mutation = useMutation({
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ['bookings'] })
     //   router.push('/admin')
-      alert('Bookings updated successfully')
+      new Toast('Bookings updated successfully', {position: 'top'})
     },
     onError: (error) => {
       console.log(error)

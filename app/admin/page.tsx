@@ -18,6 +18,7 @@ import PaginationNew from '@/components/paginationNew/page'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import BookingDetails from '@/components/bookingDetails/page'
 import EditBooking from '@/components/editBooking/page'
+import Toast from 'awesome-toast-component'
 
 //export const revalidate = 3600
 function Admin() {
@@ -79,7 +80,7 @@ const filterRevenue = totalDatas?.revenue?.filter((r: any) => r?.price !== 'Cust
     onSuccess: () => {
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ['bookings'] })
-      // router.push('/admin')
+       new Toast('Bookings deleted successfully', {position: 'top'})
     },
     onError: (error) => {
       console.log(error)
