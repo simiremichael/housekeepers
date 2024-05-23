@@ -95,7 +95,7 @@ const handleSubmit = () => {
         <div className='booking-inner-container'>
     <button onClick={() => router.back()} className='btn'>back</button>
       <h1 className='text-center font-bold'>Booking</h1>
-      <h5 className='text-xs font-bold text-blue-800 mt-3'>Please note that monthly package is available and more economical. Call us today to book monthly cleaning package</h5>
+      <h5 className='text-xs font-bold text-blue-800 mt-3'>Please note that monthly package is available. Call us today to book monthly cleaning package</h5>
       <Link className='text-xs font-bold' href='tel:+2347078482944'>Mobile: <span className='text-blue-600'> 07078482944</span></Link>
       <form action={handleSubmit}>
       <div className='date-time-container grid md:grid-cols-3 gap-4 mt-5 mb-5'>
