@@ -73,7 +73,7 @@ function page() {
        <div className='contact-left-inner-container md:ml-10 md:mt-12'>
          <div className='contact-left-details-container flex-1 items-center'>
           <h3 className='contact-left-heading'>Contact Us</h3>
-           <p className='contact-left-para'>Phone: <Link href='tel:+2348114031903' className='ml-5 font-normal'>+2348114031903</Link></p>
+           <p className='contact-left-para'>Phone: <Link href='tel:+2347078482944' className='ml-5 font-normal'>07078482944</Link></p>
            <p className='contact-left-para max-sm:mt-4'>Email: <Link href='mailto:info@housekeeping.com.ng' className='ml-5 font-normal'>info@housekeeping.com.ng</Link></p>
          </div>
        </div>

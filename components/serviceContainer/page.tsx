@@ -58,7 +58,7 @@ function ServiceContainer() {
     </div>
   </div>
    <div className="card card-compact w-full h-56 sm:h-80 bg-card1 bg-base-100 shadow-xl rounded-t-md">
-  <Image src={img6} className='h-full w-full rounded-t-md' alt="office cleaning" />
+  <Image src={img6} className='h-full w-full rounded-t-md' alt="event cleaning" />
   <div className="card-body"> 
     <p className='text-center card-text'>Event Cleaning</p>
     </div>
