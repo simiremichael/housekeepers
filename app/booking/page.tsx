@@ -71,6 +71,8 @@ if(price.serviceType === 'Post Construction Cleaning') {
     setFinalPrice('Custom price')
 }
 
+setPrice({...price, price: finalPrice});
+
 },[price.bathroom, price.bedroom, price.serviceType, price.bookingDate, price.livingRoom, price.toilet, price.price, finalPrice, price.kitchen])
 
 const mutation = useMutation({
