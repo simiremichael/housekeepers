@@ -53,25 +53,33 @@ const totalFumgatonPrice = roomFumigationPrice * Number(price.bedroom) + livingR
 
 useEffect(() => {
 if(price.serviceType === 'Residential Fumigation') {
-    setFinalPrice(totalFumgatonPrice.toString())
+    // setFinalPrice(totalFumgatonPrice.toString())
+    setPrice({...price, price: totalFumgatonPrice.toString()})
 }
 if(price.serviceType === 'Office Fumigation') {
-    setFinalPrice('Custom price')
+    // setFinalPrice('Custom price')
+    setPrice({...price, price: 'Custom price'})
 }
 if(price.serviceType === 'Residential Cleaning') {
-    setFinalPrice(totalPrice.toString())
+    // setFinalPrice(totalPrice.toString())
+    setPrice({...price, price: totalFumgatonPrice.toString()})
 }
 if(price.serviceType === 'Office Cleaning') {
-    setFinalPrice('Custom price')
+    // setFinalPrice('Custom price')
+    setPrice({...price, price: 'Custom price'})
 }
 if(price.serviceType === 'Event Cleaning') {
-    setFinalPrice('Custom price')
+    // setFinalPrice('Custom price')
+    setPrice({...price, price: 'Custom price'})
 }
 if(price.serviceType === 'Post Construction Cleaning') {
-    setFinalPrice('Custom price')
+    // setFinalPrice('Custom price')
+    setPrice({...price, price: 'Custom price'})
 }
 
-setPrice({...price, price: finalPrice});
+// if(finalPrice) {
+// setPrice({...price, price: finalPrice});
+// }
 
 },[price.bathroom, price.bedroom, price.serviceType, price.bookingDate, price.livingRoom, price.toilet, price.price, finalPrice, price.kitchen])
 
@@ -258,7 +266,7 @@ const handleSubmit = () => {
     </div>
     <div className='group-input mt-5'>
      <label className='other-input-label border-2 p-2 font-bold mt-4  bg-slate-600 text-white'>Price: <span className='ml-4 text-white'>{finalPrice !== 'Custom price'? 'NGN' : ''} {finalPrice}</span></label>
-     <input type='text' name='price' value={finalPrice} placeholder="price" className="input input-bordered w-full hidden" onChange={() => setPrice({...price, price: finalPrice})}  />
+     <input type='text' name='price' value={price?.price} placeholder="price" className="input input-bordered w-full hidden" onChange={(e:any) => setPrice({...price, price: e.target.value})}  />
     </div>
     {finalPrice === 'Custom price' &&
       <h5 className='text-xs text-blue-800 mt-5'>Please note that we need to carry out inspection to determine the price.</h5>
