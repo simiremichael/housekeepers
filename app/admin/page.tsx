@@ -2,7 +2,7 @@
 import AdminNavbar from '@/components/AdminNavbar/page'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import drawer1 from '../../public/drawer-icon1.png'
 import drawer2 from '../../public/drawer-icon2.png'
 import cardIcon1 from '../../public/admin-card-icon1.png'
@@ -177,7 +177,7 @@ const handleDelete = (id:any) => {
     </thead>
     
     <tbody className='z-10'>
-      {isLoadings ? <tr><td><div className='mt-10 mb-10 w-full flex items-center justify-center'><span className="loading loadin-icon loading-dots loading-mg text-center"></span></div></td></tr> :
+      {isLoadings ? <tr><td className='mt-10 mb-10 w-full flex items-center justify-center'><span className="loading loadin-icon loading-dots loading-mg text-center"></span></td></tr> :
       <>
       {data?.map((item: any) => 
       <tr className="bg-white" key={item?.id}>
@@ -206,7 +206,7 @@ const handleDelete = (id:any) => {
         <td>{item?.time}</td>
         <td>{item?.location}</td>
         <td>{item?.state}</td>
-        <td>{moment().fromNow(item?.createdAt)}</td>
+        <td>{moment(item?.createdAt).fromNow()}</td>
          {/* @ts-ignore:next-line */}
         <td><button className='btn text-blue-600' onClick={()=> {document.getElementById('my_modal_1').showModal(), setId(item?.id) }}>Edit</button></td>
         <td><button className='btn text-red-600' onClick={() => handleDelete(item?.id)}>Delete</button></td>
@@ -257,7 +257,7 @@ const handleDelete = (id:any) => {
           <div className="avatar placeholder">
            <div className="bg-neutral text-neutral-content rounded-full w-10">
             {/* @ts-ignore:next-line */}
-            <td><button className='btn btn-circle text-xs text-green-800' onClick={()=> {document.getElementById('my_modal_3').showModal(), setId(item?.id) }}>View</button></td>
+            <th><button className='btn btn-circle text-xs text-green-800' onClick={()=> {document.getElementById('my_modal_3').showModal(), setId(item?.id) }}>View</button></th>
             {/* <span className="text-xs">{item?.name.slice(0,1).toUpperCase()}</span> */}
            </div>
           </div>
@@ -278,7 +278,7 @@ const handleDelete = (id:any) => {
         <td>{item?.time}</td>
         <td>{item?.location}</td>
         <td>{item?.state}</td>
-        <td>{moment().fromNow(item?.createdAt)}</td>
+        <td>{moment(item?.createdAt).fromNow()}</td>
         {/* @ts-ignore:next-line */}
         <td><button className='btn text-blue-600' onClick={()=> {document.getElementById('my_modal_1').showModal(), setId(item?.id) }}>Edit</button></td>
         <td><button className='btn text-red-600' onClick={() => handleDelete(item?.id)}>Delete</button></td>
