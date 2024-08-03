@@ -144,7 +144,7 @@ const {livingRoom, bedroom, state, location, bathroom, toilet, serviceType, pric
 })
  }
 
- export const getBooking = async(id: any) => {
+ export const getBooking = async(id: string) => {
 
  const data = await prisma.booking.findUnique({
   where: {
