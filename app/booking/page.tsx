@@ -271,7 +271,7 @@ const handleSubmit = () => {
     {finalPrice === 'Custom price' &&
       <h5 className='text-xs text-blue-800 mt-5'>Please note that we need to carry out inspection to determine the price.</h5>
       }
-    <button type='submit' className='btn mt-5'>Submit</button>
+    <button type='submit' className='btn mt-5'>{mutation.isPending ? <span className="loading loading-spinner loading-xs"></span> : 'Submit'}</button>
     </form>
     </div>
     {/* {state?.success &&

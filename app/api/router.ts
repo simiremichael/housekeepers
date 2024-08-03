@@ -1,10 +1,7 @@
 'use server'
-import { PrismaClient } from "@prisma/client";
-import { NextRequest, NextResponse } from "next/server";
+import prisma from '@/lib/prisma-client/prisma';
 import { cache } from 'react'
 
-
-const prisma = new PrismaClient()
 
 // export const GET = cache(async(request: NextRequest) => {
 
@@ -147,7 +144,7 @@ const {livingRoom, bedroom, state, location, bathroom, toilet, serviceType, pric
 })
  }
 
- export const getBooking = async(id: number) => {
+ export const getBooking = async(id: any) => {
 
  const data = await prisma.booking.findUnique({
   where: {
@@ -187,7 +184,7 @@ const {livingRoom, bedroom, state, location, bathroom, toilet, serviceType, pric
 })
  }
 
- export const deletBooking = async(id: number) => {
+ export const deletBooking = async(id: any) => {
 
   // console.log(id)
 

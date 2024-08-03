@@ -15,7 +15,7 @@ datasource db {
 }
 
 model Booking {
-  id          Int      @id @default(autoincrement())
+  id          String   @id @default(cuid())
   name        String
   address     String
   email       String
