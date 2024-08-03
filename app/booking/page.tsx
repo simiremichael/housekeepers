@@ -62,7 +62,7 @@ if(price.serviceType === 'Office Fumigation') {
 }
 if(price.serviceType === 'Residential Cleaning') {
     // setFinalPrice(totalPrice.toString())
-    setPrice({...price, price: totalFumgatonPrice.toString()})
+    setPrice({...price, price: totalPrice.toString()})
 }
 if(price.serviceType === 'Office Cleaning') {
     // setFinalPrice('Custom price')
@@ -265,8 +265,8 @@ const handleSubmit = () => {
     </div>
     </div>
     <div className='group-input mt-5'>
-     <label className='other-input-label border-2 p-2 font-bold mt-4  bg-slate-600 text-white'>Price: <span className='ml-4 text-white'>{finalPrice !== 'Custom price'? 'NGN' : ''} {finalPrice}</span></label>
-     <input type='text' name='price' value={price?.price} placeholder="price" className="input input-bordered w-full hidden" onChange={(e:any) => setPrice({...price, price: e.target.value})}  />
+     <label className='other-input-label border-2 p-2 font-bold mt-4  bg-slate-600 text-white'>Price: <span className='ml-4 text-white'>{price.price !== 'Custom price'? 'NGN' : ''} {price.price}</span></label>
+     {/* <input type='text' name='price' value={price?.price} placeholder="price" className="input input-bordered w-full hidden" onChange={(e:any) => setPrice({...price, price: e.target.value})}  /> */}
     </div>
     {finalPrice === 'Custom price' &&
       <h5 className='text-xs text-blue-800 mt-5'>Please note that we need to carry out inspection to determine the price.</h5>
